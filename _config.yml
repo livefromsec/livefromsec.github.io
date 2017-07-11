@@ -5,7 +5,7 @@ permalink:      /:year-:month-:day/:title
 title:          LiveFromSec
 paginate:       5
 baseurl:        ""
-url:            "https://livefromsec.github.io/tale"
+url:            "https://livefromsec.github.io"
 
 # Assets
 sass:
