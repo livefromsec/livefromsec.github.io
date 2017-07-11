@@ -2,10 +2,10 @@
 permalink:      /:year-:month-:day/:title
 
 # Setup
-title:          Tale
+title:          LiveFromSec
 paginate:       5
 baseurl:        ""
-url:            "https://chesterhow.github.io/tale"
+url:            "https://livefromsec.github.io/tale"
 
 # Assets
 sass:
@@ -17,9 +17,9 @@ markdown:       kramdown
 
 # About
 author:
-  name:         Chester How
-  url:          http://chester.how
-  email:        chesterhow@gmail.com
+#  name:         Chester How
+#  url:          http://chester.how
+  email:        livefromsec@gmail.com
 
 # Custom vars
 version:        3.4.1
