@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "TobeDeleted - Introducing Tale"
+title:  "Introducing Tale"
 author: "Chester"
 ---
 
