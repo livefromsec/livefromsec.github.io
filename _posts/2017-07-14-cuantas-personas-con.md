@@ -7,7 +7,7 @@ author: "Pete"
 El otro día echándole un vistazo al muro de Linkedn, me encontré con las estadísticas de ISACA sobre el número de personas con certificaciones CISA y CISM en España. El enlace a la publicación es:
 [¿Sabías qué...?](https://www.linkedin.com/feed/update/urn:li:activity:6291169880452407296)
 
-Y como los posts con estadísticas siempre son interesantes, vamos a ver el número de personas certificadas en España, con los datos proporcionados por cada entidad.
+Y como los posts con estadísticas siempre son interesantes, vamos a ver el número de personas certificadas en España, con los datos proporcionados por cada entidad (ISACA e ISC2).
 
 * CISA: 1729
 * CISM: 912
