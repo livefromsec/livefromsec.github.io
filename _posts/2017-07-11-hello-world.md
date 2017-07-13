@@ -8,7 +8,7 @@ Tomando la frase de Calvin & Hobbes: <cite>&mdash; It's a magical world... let's
 
 En este blog hablaré de seguridad informática... y demás cosas que me parezcan interesantes!
 
-![placeholder](https://github.com/livefromsec/livefromsec.github.io/blob/master/assets/img/0001_cyber-security-2296269_640.jpg "Medium example image")
+![placeholder](https://github.com/livefromsec/livefromsec.github.io/blob/master/assets/img/0001_cyber-security-2296269_640.jpg)
 
 En la medida de lo posible, intentaré utilizar imágenes libres de derechos de autor. Por ejemplo la imagen previa, tomada de [Pixabay](https://pixabay.com/es/)... aunque la atribución no sea obligatoria, siempre se agradece! 
 
