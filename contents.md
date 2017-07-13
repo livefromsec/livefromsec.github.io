@@ -2,7 +2,7 @@
 layout: post
 title: "Index"
 author: "Pete"
-permalink: /index/
+permalink: /contents/
 ---
 
 Under construction :)
