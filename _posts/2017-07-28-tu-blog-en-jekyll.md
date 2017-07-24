@@ -11,4 +11,6 @@ Valoraba dos opciones: por una parte decantarme por utilizar un CMS (un Wordpres
 
 ¿Las ventajas que tiene el CMS? Sobre todo, el hecho de que el blog sea dinámico. De lo contrario nos limitamos a páginas estáticas, por lo que cosas básicas para un blog (como comentarios!) no van a estar disponibles.
 
-¿A cambio qué se gana? Por una parte, la sencillez. El hecho de no contar con un CMS que esté detrás de todo hace que la estructura quede muy sencilla: una carpeta "_posts" para los posts, el resto viene con la plantilla, y si queremos cambiar algo, al layout. 
+¿A cambio qué se gana? Por una parte, la sencillez. El hecho de no contar con un CMS que esté detrás de todo hace que la estructura quede muy sencilla: una carpeta "_posts" para los posts, el resto viene con la plantilla, y si queremos cambiar algo, al layout. Y hay que reconocerlo, el toque "geek" que le da optar por esta opción, siempre es bien recibido :)
+
+No obstante, me parece que se queda algo corto... En la próxima entrada escribiré sobre cómo montar el blog con Jekyll, y seguramente más adelante nos movamos a páginas dinámicas con un gestor de contenidos.
