@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
+  
+  {% include g_analytics.html %}
   {% include head.html %}
 
   <body>
@@ -27,6 +28,5 @@
         &copy; <time datetime="{{ site.time }}">{{ site.time | date: '%Y' }}</time> {{ site.author.name }}. Made with Jekyll using the <a href="https://github.com/chesterhow/tale/">Tale</a> theme.
       </span>
     </footer>
-    {% include analytics.html %}
   </body>
 </html>
