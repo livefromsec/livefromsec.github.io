@@ -13,4 +13,4 @@ Valoraba dos opciones: por una parte decantarme por utilizar un CMS (un Wordpres
 
 ¿A cambio qué se gana? Por una parte, la sencillez. El hecho de no contar con un CMS que esté detrás de todo hace que la estructura quede muy sencilla: una carpeta "_posts" para los posts, el resto viene con la plantilla, y si queremos cambiar algo, en el layout o el archivo de configuración. Y hay que reconocerlo, el toque "geek" que le da optar por esta opción, siempre es bien recibido :) Además, no hay que preocuparse por el hosting ya se que puede alojar en GitHub (como éste!).
 
-No obstante, me parece que se queda algo corto... En la próxima entrada escribiré sobre cómo montar el blog con Jekyll, y seguramente más adelante nos movamos a páginas dinámicas con un gestor de contenidos.
+No obstante, me parece que se queda algo corto... Ms adelante escribiré sobre cómo montar el blog con Jekyll, y seguramente más adelante nos movamos a páginas dinámicas con un gestor de contenidos.
