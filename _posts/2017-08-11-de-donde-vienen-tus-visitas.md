@@ -23,16 +23,16 @@ Lógicamente variará esa parte final, XXXXXXXXX-Y. Una vez que tenemos ese cód
 
 Una vez que tenemos ese archivo creado, tenemos que buscar el sitio en el que se indica que queremos incluirlo. Eso se hará en la carpeta "_layouts", en el archivo default.html. Si lo editamos, vemos que al principio hay una línea que se encarga de incluir head.html; la línea en concreto es:
 
-{% highlight js %}
+{% highlight %}
  include head.html 
-{% highlight js %}
+{% highlight %}
 
 Pues bien, lo que hacemos es incluir también el archivo que hemos creado. De manera que esa parte del archivo quedará:
 
-{% highlight js %}
+{% highlight %}
  include g_analytics.html 
  include head.html 
-{% highlight js %}
+{% highlight %}
 
 Y ya está, no hay que hacer más. A partir de este momento se irán recogiendo estadísticas de acceso a nuestro blog, que podremos consultar a través de Google Analytics. Por ejemplo, algo que me ha resultado muy curioso ha sido acceder a las estadísticas de este sitio y encontrarme con los siguientes países que acceden:
 
