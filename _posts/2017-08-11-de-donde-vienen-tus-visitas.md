@@ -6,7 +6,7 @@ author: "Pete"
 
 En la entrada pasada veíamos cómo podemos iniciar un (pequeño) blog con [Jekyll](https://livefromsec.github.io/2017-08-04/tu-blog-en-jekyll) alojado en Github. Si optamos por un CMS, tendremos acceso a estadísticas de navegación de manera automática, de lo contrario tendremos que configurar estas estadísticas usando, por ejemplo, Google Analytics.
 
-Para usar Google Analytics tendremos que registrarnos en el [sitio](https://analytics.google.com), muy fácil (y gratuito, para un blog pequeño) si ya tenemos una cuenta de Google. Durante el proceso habrá que indicar la dirección del sitio para el que queremos obtener las estadísticas, y al terminar aparecerá un código similar al siguiente:
+Para usar Google Analytics tendremos que registrarnos en el [sitio](https://analytics.google.com), muy fácil (y gratuito, para un blog pequeño) si ya tenemos una cuenta de Google. Durante el proceso habrá que indicar la dirección del sitio para el que queremos obtener las estadísticas, y al terminar obtendremos un código similar al siguiente:
 
 {% highlight js %}
 <script>
