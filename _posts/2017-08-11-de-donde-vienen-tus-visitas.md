@@ -9,7 +9,6 @@ En la entrada pasada veíamos cómo podemos iniciar un (pequeño) blog con [Jeky
 Para usar Google Analytics tendremos que registrarnos en el [sitio](https://analytics.google.com), muy fácil (y gratuito, para un blog pequeño) si ya tenemos una cuenta de Google. Durante el proceso habrá que indicar la dirección del sitio para el que queremos obtener las estadísticas, y al terminar aparecerá un código similar al siguiente:
 
 {% highlight js %}
-// Sample javascript code
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -23,7 +22,6 @@ Para usar Google Analytics tendremos que registrarnos en el [sitio](https://anal
 Lógicamente variará ese número final, el XXXXXXXXX-Y. Una vez que tenemos ese código, lo que hay que hacer es incluirlo automáticamente en todas las páginas del blog. ¿A mano? Sería una locura; para eso utilizaremos la carpeta "_includes" de nuestro Jekyll. Si nos fijamos, hay un archivo en dicha carpeta llamado head.html. Lo que haremos es crear otro archivo en esa misma carpeta llamado "g_analytics.html" con el código que hemos obtenido al registrarnos en Google Analytics.
 
 Una vez que tenemos ese archivo creado, tenemos que buscar el sitio en el que se indicar que queremos incluirlo. Eso se hará en la carpeta "_layouts", en el archivo default.html. Si lo editamos, vemos que al principio hay una línea que se encarga de incluir head.html; la línea concretamente es:
-
 
 {% highlight js %}
 {% include head.html %}
