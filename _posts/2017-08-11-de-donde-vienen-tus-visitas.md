@@ -4,9 +4,9 @@ title: "¿De dónde vienen tus visitas?"
 author: "Pete"
 ---
 
-En la entrada pasada veíamos cómo podemos iniciar un (pequeño) blog con Jekyll, alojado en Github. Si optamos por un CMS, tendremos acceso a 
+En la entrada pasada veíamos cómo podemos iniciar un (pequeño) blog con [Jekyll](https://livefromsec.github.io/2017-08-04/tu-blog-en-jekyll) alojado en Github. Si optamos por un CMS, tendremos acceso estadífsaddsasdadstica sdafffdede manera automática, de lo contra
 
-Estuve dándole vueltas al tema del blog y, de momento, he empezado con él utilizando [Jekyll](
+Estuve dándole vueltas al tema del blog y, de momento, he empezado con él utilizando [Jekyll](e  
 https://en.wikipedia.org/wiki/Jekyll_(software)).
 
 Valoraba dos opciones: por una parte decantarme por utilizar un CMS (un Wordpress, por ejemplo), alojado en un proveedor que gestionase el hosting y el registro del nombre de dominio; o sino, utilizar github para alojarlo, con Jekyll.
