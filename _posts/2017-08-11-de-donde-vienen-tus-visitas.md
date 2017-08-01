@@ -37,3 +37,5 @@ Pues bien, lo que hacemos es incluir también el archivo que hemos creado. De ma
 Y ya está, no hay que hacer más. A partir de este momento se irán recogiendo estadísticas de acceso a nuestro blog, que podremos consultar a través de Google Analytics. Por ejemplo, algo que me ha resultado muy curioso ha sido acceder a las estadísticas de este sitio y encontrarme con los siguientes países que acceden:
 
 ![placeholder]({{ site.url }}/assets/img/0003_img.png)
+
+El blog está empezando y las visitas desde España las esperaba, pero las otras es verdad que me han sorprendido :)
