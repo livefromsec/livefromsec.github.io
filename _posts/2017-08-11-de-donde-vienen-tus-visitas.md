@@ -4,7 +4,23 @@ title: "¿De dónde vienen tus visitas?"
 author: "Pete"
 ---
 
-En la entrada pasada veíamos cómo podemos iniciar un (pequeño) blog con [Jekyll](https://livefromsec.github.io/2017-08-04/tu-blog-en-jekyll) alojado en Github. Si optamos por un CMS, tendremos acceso estadífsaddsasdadstica sdafffdede manera automática, de lo contra
+En la entrada pasada veíamos cómo podemos iniciar un (pequeño) blog con [Jekyll](https://livefromsec.github.io/2017-08-04/tu-blog-en-jekyll) alojado en Github. Si optamos por un CMS, tendremos acceso a estadísticas de navegación de manera automática, de lo contrario tendremos que configurar estas estadísticas usando, por ejemplo, Google Analytics.
+
+Para usar Google Analytics tendremos que registrarnos en el [sitio](https://analytics.google.com), muy fácil (y gratuito, para un blog pequeño) si ya tenemos una cuenta de Google. Durante el proceso habrá que indicar la dirección del sitio para el que queremos obtener las estadísticas, y al terminar aparecerá un código similar al siguiente:
+
+{% highlight js %}
+// Sample javascript code
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-XXXXXXXXX-Y', 'auto');
+  ga('send', 'pageview');
+</script>
+{% endhighlight %}
+
+Lógicamente variará ese número final, el XXXXXXXXX-Y. Una vez que tenemos ese código, lo que hay que hacer es incluirlo automáticamente en todas las páginas del blog. ¿A mano? Sería una locura; para eso utilizaremos la carpeta "_includes" de nuestro Jekyll. Si nos fijamos, hay un archivo en dicha carpeta llamado head.html. 
 
 Estuve dándole vueltas al tema del blog y, de momento, he empezado con él utilizando [Jekyll](e  
 https://en.wikipedia.org/wiki/Jekyll_(software)).
