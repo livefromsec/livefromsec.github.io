@@ -20,15 +20,22 @@ Para usar Google Analytics tendremos que registrarnos en el [sitio](https://anal
 </script>
 {% endhighlight %}
 
-Lógicamente variará ese número final, el XXXXXXXXX-Y. Una vez que tenemos ese código, lo que hay que hacer es incluirlo automáticamente en todas las páginas del blog. ¿A mano? Sería una locura; para eso utilizaremos la carpeta "_includes" de nuestro Jekyll. Si nos fijamos, hay un archivo en dicha carpeta llamado head.html. 
+Lógicamente variará ese número final, el XXXXXXXXX-Y. Una vez que tenemos ese código, lo que hay que hacer es incluirlo automáticamente en todas las páginas del blog. ¿A mano? Sería una locura; para eso utilizaremos la carpeta "_includes" de nuestro Jekyll. Si nos fijamos, hay un archivo en dicha carpeta llamado head.html. Lo que haremos es crear otro archivo en esa misma carpeta llamado "g_analytics.html" con el código que hemos obtenido al registrarnos en Google Analytics.
 
-Estuve dándole vueltas al tema del blog y, de momento, he empezado con él utilizando [Jekyll](e  
-https://en.wikipedia.org/wiki/Jekyll_(software)).
+Una vez que tenemos ese archivo creado, tenemos que buscar el sitio en el que se indicar que queremos incluirlo. Eso se hará en la carpeta "_layouts", en el archivo default.html. Si lo editamos, vemos que al principio hay una línea que se encarga de incluir head.html; la línea concretamente es:
 
-Valoraba dos opciones: por una parte decantarme por utilizar un CMS (un Wordpress, por ejemplo), alojado en un proveedor que gestionase el hosting y el registro del nombre de dominio; o sino, utilizar github para alojarlo, con Jekyll.
 
-¿Las ventajas que tiene el CMS? Sobre todo, el hecho de que el blog sea dinámico. De lo contrario nos limitamos a páginas estáticas, por lo que cosas básicas para un blog (como comentarios!) no van a estar disponibles.
+{% highlight js %}
+{% include head.html %}
+{% highlight js %}
 
-¿A cambio qué se gana? Por una parte, la sencillez. El hecho de no contar con un CMS que esté detrás de todo hace que la estructura quede muy sencilla: una carpeta "_posts" para los posts, el resto viene con la plantilla, y si queremos cambiar algo, en el layout o el archivo de configuración. Y hay que reconocerlo, el toque "geek" que le da optar por esta opción, siempre es bien recibido :) Además, no hay que preocuparse por el hosting ya se que puede alojar en GitHub (como éste!).
+Pues bien, lo que hacemos es incluir también el archivo que hemos creado. De manera que el archivo quedará:
 
-No obstante, me parece que se queda algo corto... Más adelante escribiré sobre cómo montar el blog con Jekyll, y seguramente más adelante nos movamos a páginas dinámicas con un gestor de contenidos.
+{% highlight js %}
+{% include g_analytics.html %}
+{% include head.html %}
+{% highlight js %}
+
+Y ya está, no hay que hacer más. A partir de este momento se irán recogiendo estadísticas de acceso a nuestro blog, que podremos consultar a través de Google Analytics. Por ejemplo, algo que me ha resultado muy curioso ha sido acceder a las estadísticas de este sitio y encontrarme con los siguientes países que acceden:
+
+![placeholder]({{ site.url }}/assets/img/0003_img.png)
