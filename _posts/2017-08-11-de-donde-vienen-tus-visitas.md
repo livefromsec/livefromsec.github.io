@@ -19,15 +19,15 @@ Para usar Google Analytics tendremos que registrarnos en el [sitio](https://anal
 </script>
 {% endhighlight %}
 
-Lógicamente variará ese número final, el XXXXXXXXX-Y. Una vez que tenemos ese código, lo que hay que hacer es incluirlo automáticamente en todas las páginas del blog. ¿A mano? Sería una locura; para eso utilizaremos la carpeta "_includes" de nuestro Jekyll. Si nos fijamos, hay un archivo en dicha carpeta llamado head.html. Lo que haremos es crear otro archivo en esa misma carpeta llamado "g_analytics.html" con el código que hemos obtenido al registrarnos en Google Analytics.
+Lógicamente variará esa parte final, XXXXXXXXX-Y. Una vez que tenemos ese código, lo que hay que hacer es incluirlo automáticamente en todas las páginas del blog. ¿A mano? Sería una locura; para eso utilizaremos la carpeta "_includes" de nuestro Jekyll. Si nos fijamos, hay un archivo en dicha carpeta llamado head.html. Lo que haremos es crear otro archivo en esa misma carpeta llamado "g_analytics.html" con el código que hemos obtenido al registrarnos en Google Analytics.
 
-Una vez que tenemos ese archivo creado, tenemos que buscar el sitio en el que se indicar que queremos incluirlo. Eso se hará en la carpeta "_layouts", en el archivo default.html. Si lo editamos, vemos que al principio hay una línea que se encarga de incluir head.html; la línea concretamente es:
+Una vez que tenemos ese archivo creado, tenemos que buscar el sitio en el que se indica que queremos incluirlo. Eso se hará en la carpeta "_layouts", en el archivo default.html. Si lo editamos, vemos que al principio hay una línea que se encarga de incluir head.html; la línea en concreto es:
 
 {% highlight js %}
 {% include head.html %}
 {% highlight js %}
 
-Pues bien, lo que hacemos es incluir también el archivo que hemos creado. De manera que el archivo quedará:
+Pues bien, lo que hacemos es incluir también el archivo que hemos creado. De manera que esa parte del archivo quedará:
 
 {% highlight js %}
 {% include g_analytics.html %}
