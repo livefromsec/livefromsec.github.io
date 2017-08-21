@@ -5,7 +5,7 @@ author: "Pete"
 permalink: /ref/
 ---
 
-Under construction :)
+Esta sección está siempre en construcción. Contiene los enlaces que veo por la web que me parecen interesantes :)
 
 * Check out [OverTheWire](http://http://overthewire.org/wargames/).
 * Check out [Reddit (web pentesting)](https://www.reddit.com/r/HowToHack/comments/6miex3/im_having_trouble_figuring_out_a_good_starting/).
