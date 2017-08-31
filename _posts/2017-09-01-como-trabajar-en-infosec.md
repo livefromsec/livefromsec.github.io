@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Como trabajar en infosec (y no morir en el intento)"
+title: "Como trabajar en Infosec (y no morir en el intento)"
 author: "Pete"
 ---
 
