@@ -13,4 +13,5 @@ permalink: /contents/
 * 2017-08-18 [Vaya ofertas de trabajo...](https://livefromsec.github.io/2017-08-18/vaya-ofertas-de-trabajo)
 * 2017-08-25 [Y después del OSCP, qué?](https://livefromsec.github.io/2017-08-25/y-despues-del-oscp-que)
 * 2017-09-01 [Cómo trabajar en Infosec (y no morir en el intento)](https://livefromsec.github.io/2017-09-01/como-trabajar-en-infosec)
+* 2017-09-01 [Equifax hackeado](https://livefromsec.github.io/2017-09-08/equifax-hackeado)
 * ToBeConfirmed
