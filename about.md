@@ -7,6 +7,6 @@ permalink: /about/
 
 Pendiente de actualizar!
 
-Si quieres decirme algo, puedes enviar un correo a "livefromsec" (sin comillas) de gmail.com
+Si quieres decirme algo, puedes enviar un correo a livefromsec (at) gmail.com
 
 Muchas gracias por leerme! :)
