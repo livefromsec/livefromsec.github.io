@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "¿De dónde vienen tus visitas?"
+title: "Sobre los filtros de spam"
 author: "Pete"
 ---
 
