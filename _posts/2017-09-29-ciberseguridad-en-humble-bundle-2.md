@@ -4,10 +4,10 @@ title: "Ciberseguridad en Humble Bundle 2"
 author: "Pete"
 ---
 
-Después de la promoción que sacaron hace 2 meses con libros de ciberseguridad (cuya reseña puedes ver aquí :) blog con [Ciberseguridad en Humble Bundle](https://livefromsec.github.io/2017-08-04/tu-blog-en-jekyll) alojado en Github. Si optamos por un CMS
+Después de la promoción que sacaron hace 2 meses con libros de ciberseguridad (cuya reseña puedes ver aquí :) [Ciberseguridad en Humble Bundle](https://livefromsec.github.io/2017-07-28/ciberseguridad-en-humble-bundle), la gente de Humble Bundle han vuelto a la carga con una segunda parte de libros de seguridad informática. Entre los títulos de nuevo vuelve a haber auténticas biblias como Metasploit: The penetration tester's guide, en el pack de 1$ (un dólar!!!!!), Penetration testing de Georgia Weidman, el de 8 dólares, o Hacking the art of exploitation a partir de 15 dólares.
 
+![placeholder]({{ site.url }}/assets/img/0007_Oferta_Humble.jpg)
 
-Si te gusta el mundo de la seguridad informática, en Humble Bundle han sacado un pack de libros electrónicos de los que no se puede dejar escapar :) A continuación te dejo el enlace: [Humble Bundle](
-https://www.humblebundle.com/books/cybersecurity-wiley).
+Yo ya lo he comprado porque me parece un auténtico chollo tener esos libros a ese precio... y además donando una parte para causas benéficas. Los que más me interesaba tener eran los dos últimos que he mencionado: Penetration testing, que durante la preparación del OSCP me cansé de leer lo bueno que era y lo bien que venía (aunque yo me arreglé sin él, utilizando los apuntes de Offensive Security que son otra biblia!), y Hacking the art of exploitation, del que sólamente he leído buenas reseñas y tenía muchas ganas de leer. Ahora ya, entre los 2 packs de ciberseguridad, tengo lectura para las próximas décadas!
 
-Echándole un ojo, el pack de libros incluidos es impresionante. Si no conoces cómo funciona, decir que hay 3 niveles de pago: destinas una cantidad (de la cual una parte se destina a obras benéficas) y en función de si esa cantidad supera una cierta cifra, recibes unos pocos libros, algunos más o todos. En el caso de esta promoción, por 15$ te llevas un pack de libros increíble... de hecho hay un montón de "Biblia de X" incluidos en el pack. Así que nada, échale un vistazo y si te interesa, date prisa que sólo estará unos días más activa :)
+Decir que le queda a la promoción aún una semana, así que si están pensándolo, tienes un par de días para decidirte... aunque yo no me lo pensaría mucho!!
