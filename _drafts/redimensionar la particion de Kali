@@ -1,0 +1,17 @@
+blablabla
+
+trabajando con Kali , seguramente se haga con maquina cvirtual. Cuando nos quedamos sin espacio hay que redimensionar:
+
+https://forums.virtualbox.org/viewtopic.php?f=35&t=50661
+VBoxManage modifyhd <absolute path to file> --resize <size in MB>
+
+pero la maquina virtual no va a reconocer el espacio todavia. Para eso usamos gparted.
+
+OJO, antes de hacer nada haz un backup, y mejor aún, clona la máquina para tenerla por duplicado.
+
+después abrimos el gparted
+https://askubuntu.com/questions/349987/do-i-have-to-move-swap-partition-to-the-right-side
+
+swapoff a la swap, nos cargamos la particion de la swap, nos cargamos la extendida que la contiene, ampliamos el tamaño de la partición principal que utilamos.
+Y al final creamos otra extendida, con otra swap. aplicamos cambios, y luego swap on.
+Reiniciamos y ya tenemos la maquina con toda la extensión. :d
