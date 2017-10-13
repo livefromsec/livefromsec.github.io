@@ -6,7 +6,7 @@ author: "Pete"
 
 Lo bueno de tener un blog es que lo puedes usar como bloc de notas, así que la gente con mala memoria podemos aprovechar para dejarnos aquí referencias a cosas que utilizamos frecuentemente y luego lo tenemos disponible a un click :)
 
-En la entrada de hoy voy a escribir sobre los "alias" de Linux: son una manera de abreviar los comandos [Wiki: Alias](https://es.wikipedia.org/wiki/Alias_(Unix)). Con esto podemos resumir los comandos más utilizados, dejándolos en comandos mucho más manejables.
+En la entrada de hoy voy a escribir sobre los "alias" de Linux: son una manera de abreviar los comandos ([Wiki: Alias](https://es.wikipedia.org/wiki/Alias_(Unix))). Con esto podemos resumir los comandos más utilizados, dejándolos en comandos mucho más manejables.
 
 Por ejemplo, en mi caso me gusta tener las Kali Linux siempre actualizadas a la última versión disponible de cada paquete. Podría ejecutar cada vez que trabajo con ellas "apt-get update && apt-get upgrade -y && apt-get dist-upgrade -y && apt autoremove -y", pero parece un comando un poco largo para tener que escribirlo manualmente cada vez.
 
