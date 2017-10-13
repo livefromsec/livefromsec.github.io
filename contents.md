@@ -17,4 +17,5 @@ permalink: /contents/
 * 2017-09-15 [Sobre la falta de expertos en ciberdefensa](https://livefromsec.github.io/2017-09-16/sobre-la-falta-de-expertos-en-ciberdefensa)
 * 2017-09-22 [Sobre los filtros de spam](https://livefromsec.github.io/2017-09-22/sobre-los-filtros-de-spam)
 * 2017-09-29 [Ciberseguridad en Humble Bundle 2](https://livefromsec.github.io/2017-09-29/ciberseguridad-en-humble-bundle-2)
+* 2017-10-06 [Más bases de datos comprometidas](https://livefromsec.github.io/2017-10-06/mas-bases-de-datos-comprometidas)
 * ToBeConfirmed
