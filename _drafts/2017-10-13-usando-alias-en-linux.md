@@ -14,7 +14,7 @@ Una opción sería listar los comandos ya ejecutados con _"history"_ y luego lla
 
 Para ello modificamos el fichero bashrc que se encuentra en nuestro home: en el caso de Kali corriendo como root, en /root. Cualquier editor nos vale, con nano por ejemplo: _"nano .bashrc"_ (o si no estamos en el home, _"nano /etc/.bashrc"_). Como no voy a añadir muchos, no me hará falta utilizar un fichero aparte, un .bash_aliases; únicamente necesitaré añadir una línea en el .bashrc en la parte final, después de los alias, que diga:
 
-{% highlight %}
+{% highlight markdown %}
 alias actualiza='apt-get update && apt-get upgrade -y && apt-get dist-upgrade -y && apt autoremove -y'
 {% endhighlight %}
 
