@@ -8,7 +8,7 @@ Lo bueno de tener un blog es que lo puedes usar como bloc de notas, así que la 
 
 En la entrada de hoy voy a escribir sobre los "alias" de Linux: son una manera de abreviar los comandos ([Wiki: Alias](https://es.wikipedia.org/wiki/Alias_(Unix))). Con esto podemos resumir los comandos más utilizados, dejándolos en comandos mucho más manejables.
 
-Por ejemplo, en mi caso me gusta tener las Kali Linux siempre actualizadas a la última versión disponible de cada paquete. Podría ejecutar cada vez que trabajo con ellas "apt-get update && apt-get upgrade -y && apt-get dist-upgrade -y && apt autoremove -y", pero parece un comando un poco largo para tener que escribirlo manualmente cada vez.
+Por ejemplo, en mi caso me gusta tener las Kali Linux siempre actualizadas a la última versión disponible de cada paquete. Podría ejecutar cada vez que trabajo con ellas _"apt-get update && apt-get upgrade -y && apt-get dist-upgrade -y && apt autoremove -y"_, pero parece un comando un poco largo para tener que escribirlo manualmente cada vez.
 
 Una opción sería listar los comandos ya ejecutados con "history" y luego llamarlo con "!número_del_comando", pero me parece más sencillo definir un alias, por ejemplo "actualiza", que se encargue de hacer todo.
 
