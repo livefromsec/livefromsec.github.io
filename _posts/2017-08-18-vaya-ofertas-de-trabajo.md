@@ -8,7 +8,7 @@ Hace unas semanas escribí una entrada hablando del número de personas en Espa�
 
 Bueno, pues hace unos días un amigo me enseñaba la siguiente oferta de trabajo:
 
-![placeholder]({{ site.url }}/assets/img/0004_Oferta.png)
+![placeholder]({{ site.url }}/assets/img/0004_20170818_oferta.png)
 
 He borrado el nombre de la empresa, pero la oferta es actual, está ahora mismo activa en LinkedIn... Señores de RR.HH., yo sé que pedir es gratis, pero "recién licenciado" (en negrita) "o menos de 2 años de experiencia" es INCOMPATIBLE con las certificaciones que aparecen en el apartado "Valoramos": el CISSP requiere 5 años de experiencia, y el CISA, 4 años. A día de hoy en España CISA hay 1729 y CISSP, 604 (con la certificación actualmente válida).
 
