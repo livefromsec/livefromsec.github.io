@@ -25,7 +25,7 @@ Para ver la lógica que hay detrás del formulario nos vamos al archivo invoices
 
 ![placeholder]({{ site.url }}/assets/img/0010_20171020_templated_docs_form_data.png)
 
-Al hacer el "POST", la lógica entrará en la parte de código del "if form.is_valid():", pasándole los datos a la plantilla a través del diccionario form.cleaned_data. Y finalmente, Django nos devolverá el fichero, en el formato indicado, con los parámetros que hayamos rellenado en el formulario:
+al hacer el "POST", la lógica entrará en la parte de código del "if form.is_valid():", pasándole los datos a la plantilla a través del diccionario form.cleaned_data. Y finalmente, Django nos devolverá el fichero, en el formato indicado, con los parámetros que hayamos rellenado en el formulario:
 
 ![placeholder]({{ site.url }}/assets/img/0011_20171020_templated_docs_document_created.png)
 
@@ -43,4 +43,6 @@ Y al generar el documento, ese campo se pasará a la plantilla para que lo relle
 
 Aquí está. Obviamente, ahora el precio hemos tenido que subirlo a 15$, ya que ahora lleva el nombre del blog ;)
 
-De esta manera podemos automatizar la generación de documentos, ya sean facturas como en el ejemplo, informes, o cualquier otro tipo de documento. En la documentación del paquete se muestra cómo introducir bucles for, para poder añadir listas de objetos, imágenes, así como cómo podemos hacer para generar hojas de cálculo o presentaciones.
+De esta manera podemos automatizar la generación de documentos, ya sean facturas como en el ejemplo, informes, o cualquier otro tipo de documento. Además, en la documentación del paquete se muestra cómo introducir bucles for, para poder añadir listas de objetos, imágenes, así como cómo podemos hacer para generar hojas de cálculo o presentaciones.
+
+Una buena manera de facilitarnos el trabajo :)
