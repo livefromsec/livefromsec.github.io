@@ -17,29 +17,29 @@ Nos bajamos el zip (botón de la parte superior derecha de Github, "Clone or dow
 
 Levantamos el servidor Django desde la consola con "python manage.py runserver" y accedemos con el navegador a "localhost:8000". El formulario que veremos es similar al siguiente:
 
-![placeholder]({{ site.url }}/assets/img/0008_templated_docs_initial_form.PNG)
+![placeholder]({{ site.url }}/assets/img/0008_20171020_templated_docs_initial_form.png)
 
 Para ver la lógica que hay detrás del formulario nos vamos al archivo invoices/views.py. Si no se han introducido datos en el formulario, utilizará el archivo invoices/form.html para mostrar el formulario, y una vez que lo rellenemos, por ejemplo con los siguientes datos:
 
-![placeholder]({{ site.url }}/assets/img/0009_templated_docs_views.PNG)
+![placeholder]({{ site.url }}/assets/img/0009_20171020_templated_docs_views.png)
 
-![placeholder]({{ site.url }}/assets/img/0010_templated_docs_form_data.PNG)
+![placeholder]({{ site.url }}/assets/img/0010_20171020_templated_docs_form_data.png)
 
 Al hacer el "POST", la lógica entrará en la parte de código del "if form.is_valid():", pasándole los datos a la plantilla a través del diccionario form.cleaned_data. Y finalmente, Django nos devolverá el fichero, en el formato indicado, con los parámetros que hayamos rellenado en el formulario:
 
-![placeholder]({{ site.url }}/assets/img/0011_templated_docs_document_created.PNG)
+![placeholder]({{ site.url }}/assets/img/0011_20171020_templated_docs_document_created.png)
 
 Si queremos modificar la plantilla es tan sencillo como introducir el campo nuevo en la plantilla (situada en invoices/templates/invoice.odt), por ejemplo a continuación he añadido un campo nuevo debajo de "BILL TO":
 
-![placeholder]({{ site.url }}/assets/img/0012_templated_docs_new_field.PNG)
+![placeholder]({{ site.url }}/assets/img/0012_20171020_templated_docs_new_field.png)
 
 Ese nuevo_campo que hemos definido tendremos que pasárselo a la plantilla ahora. Obviamente lo lógico es, o añadir en el formulario (en invoices/forms.py) ese nuevo campo, o que lo coja de un modelo, pero para simplicar el ejemplo podemos añadirlo directamente al código:
 
-![placeholder]({{ site.url }}/assets/img/0013_templated_docs_new_key_dict.PNG)
+![placeholder]({{ site.url }}/assets/img/0013_20171020_templated_docs_new_key_dict.png)
 
 Y al generar el documento, ese campo se pasará a la plantilla para que lo rellene automáticamente:
 
-![placeholder]({{ site.url }}/assets/img/0014_templated_docs_new_doc.PNG)
+![placeholder]({{ site.url }}/assets/img/0014_20171020_templated_docs_new_doc.png)
 
 Aquí está. Obviamente, ahora el precio hemos tenido que subirlo a 15$, ya que ahora lleva el nombre del blog ;)
 
