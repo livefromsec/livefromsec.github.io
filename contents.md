@@ -19,4 +19,5 @@ permalink: /contents/
 * 2017-09-29 [Ciberseguridad en Humble Bundle 2](https://livefromsec.github.io/2017-09-29/ciberseguridad-en-humble-bundle-2)
 * 2017-10-06 [Más bases de datos comprometidas](https://livefromsec.github.io/2017-10-06/mas-bases-de-datos-comprometidas)
 * 2017-10-13 [Usando alias en Linux](https://livefromsec.github.io/2017-10-13/usando-alias-en-linux)
+* 2017-10-20 [Automatizando la creación de documentos](https://livefromsec.github.io/2017-10-20/automatizando-la-creacion-de-documentos)
 * ToBeConfirmed
