@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "Automatizando la creación de informes"
+title: "Automatizando la creación de documentos"
 author: "Pete"
 ---
 
 Después de algunas entradas hablando de noticias de seguridad informática ([Equifax](https://livefromsec.github.io/2017-09-08/equifax-hackeado), [Yahoo](https://livefromsec.github.io/2017-10-06/mas-bases-de-datos-comprometidas)), la noticia de esta semana podía haber sido la vulnerabilidad encontrada en WPA2, [KRACK](https://www.reddit.com/r/netsec/comments/76onkk/the_krack_attack_info_will_be_available_here/). 
 
-Pero si hablamos siempre de noticias, el blog no tendría otros contenidos. Así que voy a utilizar de nuevo el blog como [libreta para apuntar](https://livefromsec.github.io/2017-10-13/usando-alias-en-linux) las cosas importantes, y voy a hablar de automatizar el trabajo utilizando Python y LibreOffice. Hay un paquete de Django que nos facilitará la tarea: templated-docs. Ésta es la página en la que su autor presenta el [funcionamiento](http://morozov.ca/django-pdf-msword-excel-templates.html) y ésta es la [documentación](https://templated-docs.readthedocs.io/en/latest/).
+Pero si hablamos siempre de noticias, el blog no tendría otros contenidos. Así que voy a utilizar de nuevo el blog como [libreta para apuntar](https://livefromsec.github.io/2017-10-13/usando-alias-en-linux) las cosas importantes, y voy a hablar de automatizar el trabajo de creación de documentos utilizando Python y LibreOffice. Hay un paquete de Django que nos facilitará la tarea: templated-docs. Ésta es la página en la que su autor presenta el [funcionamiento](http://morozov.ca/django-pdf-msword-excel-templates.html) y ésta es la [documentación](https://templated-docs.readthedocs.io/en/latest/).
 
 Django es un framework de Python para la creación de sitios web. Si estás leyendo el artículo seguro que lo conoces, si no aquí está la [documentación del proyecto](https://www.djangoproject.com/) (que por cierto, acaban de sacar la beta de su versión 2.0). Para ver mejor cómo funciona la creación automatizada de documentos, podemos utilizar el ejemplo que da el creador del paquete, está en su [Github](https://github.com/alexmorozov/templated-docs/tree/master/example). 
 
@@ -19,7 +19,7 @@ Levantamos el servidor Django con "python manage.py runserver" y accedemos con e
 
 
 
-Para ver la lógica que hay detrás del formulario nos vamos al archivo views.py. Si no se han introducido datos en el formulario, utilizará el archivo invoices/form.html para mostrar el formulario, y una vez que lo rellenemos, por ejemplo con los siguientes datos:
+Para ver la lógica que hay detrás del formulario nos vamos al archivo invoices/views.py. Si no se han introducido datos en el formulario, utilizará el archivo invoices/form.html para mostrar el formulario, y una vez que lo rellenemos, por ejemplo con los siguientes datos:
 
 
 
