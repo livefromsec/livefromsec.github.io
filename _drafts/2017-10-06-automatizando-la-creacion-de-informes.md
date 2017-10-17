@@ -4,7 +4,7 @@ title: "Automatizando la creación de informes"
 author: "Pete"
 ---
 
-Después de algunas entradas hablando de noticias de seguridad informática ([Equifax](https://livefromsec.github.io/2017-09-08/equifax-hackeado), [Yahoo](https://livefromsec.github.io/2017-10-06/mas-bases-de-datos-comprometidas)), la noticia de esta semana podía haber sido la vulnerabilidad encontrada en WPA2 que facilita robar la clave para poder conectarse con el AP. Pero es un rollo xD
+Después de algunas entradas hablando de noticias de seguridad informática ([Equifax](https://livefromsec.github.io/2017-09-08/equifax-hackeado), [Yahoo](https://livefromsec.github.io/2017-10-06/mas-bases-de-datos-comprometidas)), la noticia de esta semana podía haber sido la vulnerabilidad encontrada en WPA2, [KRACK](https://www.reddit.com/r/netsec/comments/76onkk/the_krack_attack_info_will_be_available_here/). Pero si hablamos siempre de noticias, el blog no tendría otra csas
 
 Así que voy a utilizar de nuevo el blog como libreta para apuntar las cosas importantes, y voy a hablar de automatizar el trabajo utilizando python y LibreOffice. Hay un paquete de Django que nos facilitará la tarea: templated-docs. Esta es la página en la que su autor presenta el [funcionamiento](http://morozov.ca/django-pdf-msword-excel-templates.html) y ésta es la [documentación](https://templated-docs.readthedocs.io/en/latest/).
 
