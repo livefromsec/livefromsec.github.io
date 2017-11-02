@@ -20,4 +20,5 @@ permalink: /contents/
 * 2017-10-06 [Más bases de datos comprometidas](https://livefromsec.github.io/2017-10-06/mas-bases-de-datos-comprometidas)
 * 2017-10-13 [Usando alias en Linux](https://livefromsec.github.io/2017-10-13/usando-alias-en-linux)
 * 2017-10-20 [Automatizando la creación de documentos](https://livefromsec.github.io/2017-10-20/automatizando-la-creacion-de-documentos)
+* 2017-10-27 [¿Por qué Python?](https://github.com/livefromsec/livefromsec.github.io/2017-10-27/por-que-python)
 * ToBeConfirmed
