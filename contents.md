@@ -21,4 +21,5 @@ permalink: /contents/
 * 2017-10-13 [Usando alias en Linux](https://livefromsec.github.io/2017-10-13/usando-alias-en-linux)
 * 2017-10-20 [Automatizando la creación de documentos](https://livefromsec.github.io/2017-10-20/automatizando-la-creacion-de-documentos)
 * 2017-10-27 [¿Por qué Python?](https://livefromsec.github.io/2017-10-27/por-que-python)
+* 2017-11-03 [5 preguntas antes de empezar un pentest](https://livefromsec.github.io/2017-11-03/5-preguntas-antes-de-empezar-un-pentest)
 * ToBeConfirmed
