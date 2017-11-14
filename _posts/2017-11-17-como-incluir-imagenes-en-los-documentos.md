@@ -16,7 +16,7 @@ En la plantilla rellenamos los campos; en algún punto tendremos que tener un pe
 
 ![placeholder]({{ site.url }}/assets/img/0015_20171117_templated_docs_plantilla.png)
 
-Hecho. Ahora generamos nuestro documento... y no funcionará ;) El ejemplo que hay en la página del creador no funciona de serie, de hecho al tener el bloqueador de javascript (del que hablé en la entrada anterior) no aparecen los comentarios y fue complicado dar con la solución. Visitando la página desactivé NoScript y en los comentarios alguien se había dado cuenta del mismo bug, y se lo habían avisado y habían puesto cómo resolverlo. Es necesario modificar el archivo "templated_docs_tags.py" (en mi caso estaba en mi home, en .local/lib/python3.5/site-packages/templated_docs/templatetags/templated_docs_tags.py, pero se puede buscar con "locate templated_docs_tags.py"). 
+Hecho. Ahora generamos nuestro documento... y no funcionará ;) El ejemplo que hay en la página del creador no funciona de serie, de hecho al tener el bloqueador de javascript (del que hablé en la [entrada anterior](https://livefromsec.github.io/2017-11-10/bloqueando-de-todo-en-el-navegador)) no aparecen los comentarios y fue complicado dar con la solución. Visitando la página desactivé NoScript y vi en los comentarios que alguien se había dado cuenta del mismo bug, se lo habían avisado y habían puesto cómo resolverlo. Es necesario modificar el archivo "templated_docs_tags.py" (en mi caso estaba en mi home, en .local/lib/python3.5/site-packages/templated_docs/templatetags/templated_docs_tags.py, pero se puede buscar con "locate templated_docs_tags.py"). 
 
 Lo editamos con nano, y en la línea
 > images = context.dicts[0].setdefault('ootemplate_imgs', {})
