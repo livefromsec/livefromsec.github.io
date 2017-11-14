@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Como incluir imágenes en los documentos"
+title: "Cómo incluir imágenes en los documentos"
 author: "Pete"
 ---
 
@@ -12,7 +12,7 @@ Por tanto, partimos de que tenemos nuestra imagen (por ejemplo, jpg o png) en un
 
 Empezamos por crear nuestro modelo; por ejemplo un modelo Pingüino, que tendrá varios campos, entre ellos un precio y una imagen. Creamos un nuevo objeto Pingüino, que tendrá un coste 1$ y una imagen de Tux :)
 
-En la plantilla rellenamos los campos; en algún punto tendremos que tener un penguin.price y un penguin.photo. Ojo que este último es una imagen, y en lugar de ponerlo entre dos llaves tiene una sintaxis especial: {% image penguin.photo %}
+En la plantilla rellenamos los campos; en algún punto tendremos que tener un penguin.price y un penguin.photo. Ojo que este último es una imagen, y en lugar de ponerlo entre dos llaves tiene una sintaxis especial.
 
 ![placeholder]({{ site.url }}/assets/img/0015_20171117_templated_docs_plantilla.png)
 
