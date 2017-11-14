@@ -23,4 +23,5 @@ permalink: /contents/
 * 2017-10-27 [¿Por qué Python?](https://livefromsec.github.io/2017-10-27/por-que-python)
 * 2017-11-03 [5 preguntas antes de empezar un pentest](https://livefromsec.github.io/2017-11-03/5-preguntas-antes-de-empezar-un-pentest)
 * 2017-11-10 [Bloqueando de todo en el navegador](https://livefromsec.github.io/2017-11-10/bloqueando-de-todo-en-el-navegador)
+* 2017-11-17 [Cómo incluir imágenes en los documentos](https://livefromsec.github.io/2017-11-17/como-incluir-imagenes-en-los-documentos)
 * ToBeConfirmed
