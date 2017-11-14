@@ -18,12 +18,10 @@ En la plantilla rellenamos los campos; en algún punto tendremos que tener un pe
 
 Hecho. Ahora generamos nuestro documento... y no funcionará ;) El ejemplo que hay en la página del creador no funciona de serie, de hecho al tener el bloqueador de javascript (como comenté en la entrada anterior) no aparecen los comentarios y fue complicado dar con la solución. Visitando la página desactivé NoScript y en los comentarios alguien se había dado cuenta del mismoo bug, y en los comentarios se lo habían avisado y habían puesto cómo resolverlo. Es necesario modificar el archivo "templated_docs_tags.py" (en mi caso estaba en mi home, en .local/lib/python3.5/site-packages/templated_docs/templatetags/templated_docs_tags.py, pero se puede buscar con "locate templated_docs_tags.py"). 
 
-Lo editamos con nano, y en la línea 
-images = context.dicts[0].setdefault('ootemplate_imgs', {})
-
-tenemos que sustituir ootemplate_imgs por _templated_docs_imgs_, de manera que quedará:
-
-images = context.dicts[0].setdefault('_templated_docs_imgs', {})
+Lo editamos con nano, y en la línea
+> images = context.dicts[0].setdefault('ootemplate_imgs', {})
+tenemos que sustituir ootemplate_imgs por _templated_docs_imgs
+> images = context.dicts[0].setdefault('_templated_docs_imgs', {})
 
 Ahora sí podemos generar el fichero, y esta vez nos devolverá un fichero con la imagen integrada:
 
