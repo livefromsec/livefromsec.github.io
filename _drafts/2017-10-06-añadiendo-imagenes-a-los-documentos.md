@@ -20,7 +20,9 @@ Hecho. Ahora generamos nuestro documento... y no funcionará ;) El ejemplo que h
 
 Lo editamos con nano, y en la línea
 > images = context.dicts[0].setdefault('ootemplate_imgs', {})
+
 tenemos que sustituir ootemplate_imgs por _templated_docs_imgs
+
 > images = context.dicts[0].setdefault('_templated_docs_imgs', {})
 
 Ahora sí podemos generar el fichero, y esta vez nos devolverá un fichero con la imagen integrada:
