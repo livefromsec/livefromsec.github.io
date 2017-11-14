@@ -4,7 +4,7 @@ title: "Añadiendo imágenes a los documentos"
 author: "Pete"
 ---
 
-Después de la entrada de hace unas semanas describiendo cómo podíamos automatizar la [creación de documentos] desde un Django(https://livefromsec.github.io/2017-10-20/automatizando-la-creacion-de-documentos) tenía ganas de continuar escribiendo acerca del tema. Me pareció bastante útil la idea, y sería completamente genial si pudiésemos generar esos documentos incluyendo imágenes... De eso va el post de hoy.
+Después de la entrada de hace unas semanas describiendo cómo podíamos automatizar la [creación de documentos desde un Django](https://livefromsec.github.io/2017-10-20/automatizando-la-creacion-de-documentos) tenía ganas de continuar escribiendo acerca del tema. Me pareció bastante útil la idea, y sería completamente genial si pudiésemos generar esos documentos incluyendo imágenes... De eso va el post de hoy.
 
 Una vez que tenemos nuestra plantilla funcionando (post anterior), si nos vamos a la [documentación del proyecto](https://templated-docs.readthedocs.io/en/latest/templatetags.html) podemos ver que también se pueden incrustar imágenes dentro de los documentos (cómo generarlas es otra historia, aunque se puede empezar por mirar [pygal](http://pygal.org/en/stable/) o plotly).
 
