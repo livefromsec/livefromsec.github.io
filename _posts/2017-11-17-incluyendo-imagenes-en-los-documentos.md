@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Añadiendo imágenes a los documentos"
+title: "Incluyendo imágenes en los documentos"
 author: "Pete"
 ---
 
