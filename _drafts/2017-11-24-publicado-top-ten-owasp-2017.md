@@ -18,6 +18,6 @@ Los XSS caen 4 puntos, hasta la séptima posición; y los CSRF salen del top ten
 
 ![placeholder]({{ site.url }}/assets/img/0017_20171124_owasp_top_three.png)
 
-En resumen, muy buen documento que *sintetiza en 20 páginas los principales riesgos a los que se enfrentan las aplicaciones web*.
+En resumen, muy buen documento que **sintetiza en 20 páginas los principales riesgos a los que se enfrentan las aplicaciones web**.
 
 Y aprovechando que es 24 de noviembre, pequeño offtopic: como es el black friday, te recomiendo que le eches un ojo a la página de Shodan. Shodan es un scanner de IPv4 en el que se puede encontrar muchísima información, y ha repetido su habitual promoción de una suscripción permanente por un precio irrisorio. Si te dedicas a la seguridad informática, seguro que lo conoces ;)
