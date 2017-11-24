@@ -24,4 +24,5 @@ permalink: /contents/
 * 2017-11-03 [5 preguntas antes de empezar un pentest](https://livefromsec.github.io/2017-11-03/5-preguntas-antes-de-empezar-un-pentest)
 * 2017-11-10 [Bloqueando de todo en el navegador](https://livefromsec.github.io/2017-11-10/bloqueando-de-todo-en-el-navegador)
 * 2017-11-17 [Cómo incluir imágenes en los documentos](https://livefromsec.github.io/2017-11-17/como-incluir-imagenes-en-los-documentos)
+* 2017-11-24 [Publicado el top ten 2017 de OWASP](https://livefromsec.github.io/2017-11-24/publicado-top-ten-owasp-2017)
 * ToBeConfirmed
