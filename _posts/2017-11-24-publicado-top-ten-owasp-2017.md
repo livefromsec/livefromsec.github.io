@@ -8,7 +8,7 @@ Bienvenid@ otra semana más a LiveFromSec.
 
 Para este viernes 24 (black friday!) me traigo la publicación de la versión final del OWASP top ten 2017. La versión preliminar (release candidate) fue publicada hace varios meses, antes de verano, y este lunes se ha publicado la versión final.
 
-OWASP [wiki](https://es.wikipedia.org/wiki/Open_Web_Application_Security_Project) publica trianualmente su top ten de vulnerabilidades web. El pdf de este año lo puedes encontrar en su github [pdf](https://github.com/OWASP/Top10/blob/master/2017/OWASP%20Top%2010-2017%20(en).pdf)... y otra vez, la inyección SQL gana. Y eso que los prepared statements llevan entre nosotros mucho tiempo.
+OWASP ([wiki](https://es.wikipedia.org/wiki/Open_Web_Application_Security_Project)) publica trianualmente su top ten de vulnerabilidades web. El pdf de este año lo puedes encontrar en su github [pdf](https://github.com/OWASP/Top10/blob/master/2017/OWASP%20Top%2010-2017%20(en).pdf)... y otra vez, la inyección SQL gana. Y eso que los prepared statements llevan entre nosotros mucho tiempo.
 
 En la siguiente imagen puedes ver cómo queda el top ten, mapeado con el de la versión previa (2013):
 
