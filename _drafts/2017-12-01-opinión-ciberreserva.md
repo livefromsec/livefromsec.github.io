@@ -4,22 +4,16 @@ title: "Opinión sobre la creación de una ciberreserva"
 author: "Pete"
 ---
 
-Si te gusta estar al tanto de las noticias, estos días probablemente habrás visto una noticia acerca de la posible creación de una ciberreserva: [El Mundo 23/11/17, ](http://www.elmundo.es/espana/2017/11/23/5a16f08eca4741a3198b45f0.html) 
+Si te gusta estar al tanto de las noticias, estos días probablemente habrás visto una noticia acerca de la posible creación de una ciberreserva: [El Mundo 23/11/17, El mando militar de la ciberdefensa apoya crear una ciberreserva de 'hackers' sin remuneración económica](http://www.elmundo.es/espana/2017/11/23/5a16f08eca4741a3198b45f0.html) 
 
-Bienvenid@ otra semana más a LiveFromSec. 
+Personalmente, creo que la reserva es algo bueno. Son perfiles con unas características especiales (gente apasionada por la tecnología, en continua formación, con un alto grado de especialización) que, si bien se pueden intentar cubrir de manera permanente, es probable que nunca se pueda contar con el número de expertos deseado, especialmente en una situación "compleja". Por tanto, el hecho de que exista una reserva de gente a la que poder acudir en determinadas ocasiones, personalmente lo veo una buena idea. 
 
-Para este viernes 24 (black friday!) me traigo la publicación de la versión final del OWASP top ten 2017. La versión preliminar (release candidate) fue publicada hace varios meses, antes de verano, y este lunes se ha publicado la versión final.
+El "pero" está un poco más avanzada la noticia, "les diríamos que no les vamos a pagar nada, porque el único sueldo sería la satisfacción de defender a su nación, a su Estado".
 
-OWASP ([wiki](https://es.wikipedia.org/wiki/Open_Web_Application_Security_Project)) publica trianualmente su top ten de vulnerabilidades web. El pdf de este año lo puedes encontrar en su github [pdf](https://github.com/OWASP/Top10/blob/master/2017/OWASP%20Top%2010-2017%20(en).pdf)... y otra vez, la inyección SQL gana. Y eso que los prepared statements llevan entre nosotros mucho tiempo.
+Imagino que la frase está un poco sacada de contexto, por no tratarse de una entrevista, si no de una pregunta respondida en el momenot; y que llegado el caso, se matizaría. Pero a priori... pues como que no. Básicamente porque cuando hay que pagar el alquiler, hacer la compra o echar gasolina, no se puede pagar con "satisfacción".
 
-En la siguiente imagen puedes ver cómo queda el top ten, mapeado con el de la versión previa (2013):
+Por lo tanto, para empezar habría que tener claras las atribuciones de esta reserva. En caso de ser necesario, ¿hay que tener disponibilidad o si un reservista no tiene ganas de actuar no pasaría nada? Sería importante saberlo de antemano, porque lo primero es un trabajo. 
 
-![placeholder]({{ site.url }}/assets/img/0016_20171124_owasp_top_ten.png)
+¿Qué ocurriría cuando se llamase a ese grupo de personas? Si tienen que estar colaborando durante una semana, ¿esa semana no irían a trabajar?
 
-Los XSS caen 4 puntos, hasta la séptima posición; y los CSRF salen del top ten. El pódium lo completan los problemas con la autenticación (que repite en el segundo puesto) y la exposición de datos sensibles, que sube desde el sexto puesto al tercero.
-
-![placeholder]({{ site.url }}/assets/img/0017_20171124_owasp_top_three.png)
-
-En resumen, muy buen documento que **sintetiza en 20 páginas los principales riesgos a los que se enfrentan las aplicaciones web**.
-
-Y aprovechando que es 24 de noviembre, pequeño offtopic: como es el black friday, te recomiendo que le eches un ojo a la página de Shodan. Shodan es un scanner de IPv4 en el que se puede encontrar muchísima información, y ha repetido su habitual promoción de una suscripción permanente por un precio irrisorio. Si te dedicas a la seguridad informática, seguro que lo conoces ;)
+Lo dicho al principio, como idea, la creación de una reserva de gente con conocimientos de seguridad informática es buena. La implementación de la idea... habrá que verla.
