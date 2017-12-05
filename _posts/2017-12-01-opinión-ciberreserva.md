@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Opinión sobre la creación de una ciberreserva"
+title: "Sobre la creación de una ciberreserva"
 author: "Pete"
 ---
 
