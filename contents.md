@@ -26,4 +26,5 @@ permalink: /contents/
 * 2017-11-17 [Cómo incluir imágenes en los documentos](https://livefromsec.github.io/2017-11-17/como-incluir-imagenes-en-los-documentos)
 * 2017-11-24 [Publicado el top ten 2017 de OWASP](https://livefromsec.github.io/2017-11-24/publicado-top-ten-owasp-2017)
 * 2017-12-01 [Sobre la creación de una ciberreserva](https://livefromsec.github.io/2017-12-01/opini%C3%B3n-ciberreserva)
+* 2017-12-08 [Un pequeño fail navideño](https://livefromsec.github.io/2017-12-08/un-pequeño-fail-navideño)
 * ToBeConfirmed
