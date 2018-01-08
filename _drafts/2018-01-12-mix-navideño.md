@@ -1,12 +1,28 @@
-Blabla Keepassx
+---
+layout: post
+title: "Mix navideño"
+author: "Pete"
+---
 
-Bienvenid@ otra semana más a LiveFromSec.
+Feliz año nuevo! Han sido unas semanas de desconexión, y la vuelta al día a día siempre cuesta!
 
-Para este viernes 24 (black friday!) me traigo la publicación de la versión final del OWASP top ten 2017. La versión preliminar (release candidate) fue publicada hace varios meses, antes de verano, y este lunes se ha publicado la versión final.
+Pero vamos, desde luego esta Navidad nos ha traído noticias al mundo de la seguridad informática, como han sido las vulnerabilidades SPECTRE y MELTDOWN... que tienen imagen propia, y ya se sabe, cuando nos referimos a una vulnerabilidad con su nombre propio e imagen, en lugar de usando su CVE es que estamos hablando de palabras mayores :)
 
-OWASP (wiki) publica trianualmente su top ten de vulnerabilidades web. El pdf de este año lo puedes encontrar en su github pdf... y otra vez, la inyección SQL gana. Y eso que los prepared statements llevan entre nosotros mucho tiempo.
+Imagen de ambas vulns, tomada de europapress.
 
-En la siguiente imagen puedes ver cómo queda el top ten, mapeado con el de la versión previa (2013):
+Pero bueno, si eres asiduo al blog seguro que has leído muchos más detalles durante estos días (y sino, aquí tienes el enlace al megathread creado en Reddit para hablar del tema).
+
+Para la entrada de hoy me he traído dos ideas: la primera es un regalo de Reyes en forma de nuevo Humble Bundle :) Un pack de libros de python! Yo lo he comprado por el libro de Django, pero seguro que cada uno tiene una motivación para comprarlo... al fin y al cabo, Python es EL lenguaje [enlace]
+
+Y lo mejor de todo, es que parte de la compra se destina a obras benéficas, así que es un win-win en toda regla.
+
+El segundo tema es una idea que me rondaba la cabeza durante la Navidad. Vi una promoción por la que, comprando un juguete, te devolvían una cierta cantidad del precio.
+
+La verdad es que al ver en qué consistía, me llamó bastante la atención: el reembolso son 20€, y a cambio hay que facilitar: Nombre, apellidos, fecha de nacimiento, DNI (empieza a ponerse la cosa interesante, aunque entiendo que sea necesario controlar la participación y se consigue con el DNI), provincia, email, teléfono (se pone aún más interesante) y finalmente, la cuenta bancaria. DIN DIN DIN. 
+
+Aquí cada uno tendrá su opinión. Personalmente, considero que son muchos datos para 20€. Sobre todo, porque nos podíamos haber quedado en nombre, apellidos y correo electrónico, y hacer un ingreso por Paypal.
+
+
 
 ![placeholder]({{ site.url }}/assets/img/0016_20171124_owasp_top_ten.png)
 
