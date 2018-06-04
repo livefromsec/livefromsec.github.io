@@ -28,4 +28,5 @@ permalink: /contents/
 * 2017-12-01 [Sobre la creación de una ciberreserva](https://livefromsec.github.io/2017-12-01/opini%C3%B3n-ciberreserva)
 * 2017-12-08 [Un pequeño fail navideño](https://livefromsec.github.io/2017-12-08/un-pequeño-fail-navideño)
 * 2017-12-15 [Save net neutrality](https://livefromsec.github.io/2017-12-15/save-net-neutrality)
+* 2018-06-04 [Walkthrough de la máquina Basic Pentesting](https://livefromsec.github.io/2018-06-04/vulnhub_walkthrough_basic_pentesting]
 * ToBeConfirmed
