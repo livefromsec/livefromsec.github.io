@@ -81,4 +81,15 @@ Le echo un ojo al /etc/passwd con
 
 y veo que hay varios usuarios en el sistema: c0rruptedb1t, bob, jc, seb y elliot.
 
-Nos vamos al /home y 
+Nos vamos al /home y vamos a ir enumerando.
+* seb no tiene nada destacable en su home
+* jc no tiene nada destacable en su home
+* elliot tiene un fichero llamado theadminisdumb.txt xD Este fichero nos da las credenciales de james (presumiblemente jc) y las suyas.
+* bob es el que más cosas tiene: un fichero oculto llamado old_passwordfile.html, que tiene las credenciales de seb y las de jc. Además tiene 2 scripts en python (Hello_Again.py y Whell_Of_Fortune.py), un proftpd1.3.3 (versión backdorizada xD) y en su carpeta Documents tiene un documento poniendo a caldo a los demás (staff.txt), un fichero cifrado (login.txt.gpg) y un script que muestra unas notas en el escritorio.
+
+
+Entonces, recopilando, tenemos 3 credenciales (las de elliot, jc y seb); un documento diciendo que bob es el administrador y unos cuantos ficheros de bob.
+
+
+
+
