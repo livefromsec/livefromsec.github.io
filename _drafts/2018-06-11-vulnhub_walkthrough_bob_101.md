@@ -39,13 +39,13 @@ Miro primero en passwords.html... era muy bonito para ser real, los admin nos cu
 
 Miro en login.php, que da error, y en login.html que nos informa que está desactivada la página de login. Pues nada, en principio no habrá que forzar la inyección SQL en el formulario de login ;) Nos vamos a mirar la consola de desarrollo.
 
-![placeholder]({{ site.url }}/assets/img/0016_20171124_owasp_top_ten.png)   -> la imagen de la consola de dev.
+![placeholder]({{ site.url }}/assets/img/0031_201080607_0003.png)
 
 # Consiguiendo la shell
 
 Puede ejecutar comandos, así que vamos a ver si podemos abrirnos una shell con netcat...
 
-![placeholder]({{ site.url }}/assets/img/0016_20171124_owasp_top_ten.png)   -> viendo el troleo
+![placeholder]({{ site.url }}/assets/img/0032_201080607_0004.png)
 
 Hummmm... parece que el admin se lo ha tomado en serio. Pruebo todos los trucos de la [entrada pasada](blabla), pero está todo filtrado.
 
@@ -55,15 +55,15 @@ También está restringido. Pues nada, a ver si se pueden ejecutar dos comandos:
 * pruebo separándolos con ";", y también está bloqueado (aunque da otro mensaje).
 * pruebo concatenándolos, con "&&"... y funciona!
 
-![placeholder]({{ site.url }}/assets/img/0016_20171124_owasp_top_ten.png)   -> viendo el troleo
+![placeholder]({{ site.url }}/assets/img/0033_201080607_0005.png)
 
 Ahora sí, concatenamos id con un nc y tenemos nuestra shell 
 
-![placeholder]({{ site.url }}/assets/img/0016_20171124_owasp_top_ten.png)   -> imagen mostrando la shell 007
+![placeholder]({{ site.url }}/assets/img/0034_201080607_0006.png)
 
 Sacamos una shell con python:
 
-![placeholder]({{ site.url }}/assets/img/0016_20171124_owasp_top_ten.png)   -> imagen mostrando la shell.
+![placeholder]({{ site.url }}/assets/img/0035_201080607_0007.png)
 
 y nos ponemos a enumerar.
 
@@ -78,7 +78,7 @@ Le echo un ojo al /etc/passwd con
 y veo que hay varios usuarios en el sistema: c0rruptedb1t, bob, jc, seb y elliot.
 Y que uno de ellos, bob aparece como "Not the smartest person".
 
-![placeholder]({{ site.url }}/assets/img/0016_20171124_owasp_top_ten.png)   -> imagen mostrando la shell.
+![placeholder]({{ site.url }}/assets/img/0036_201080607_0008.png)
 
 Nos vamos al /home y vamos a ir enumerando.
 * seb no tiene nada destacable en su home
