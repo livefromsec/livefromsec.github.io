@@ -156,3 +156,5 @@ Así que abrimos la sesión de bob, nos vamos a la raíz y hacemos:
 * _sudo cat flag.txt_
 
 ![placeholder]({{ site.url }}/assets/img/0044_201080607_0016)
+
+C'est fini :) Muy entretenido, aunque la parte de sacar la clave de cifrado gpg un poco de idea feliz...
