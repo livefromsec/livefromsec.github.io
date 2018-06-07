@@ -118,7 +118,7 @@ Así que toca hacer recapitulación... ¿qué tenemos? Las claves de 3 de los 4 
 
 [En este punto empezamos a sudar viendo que puede que la máquina se resuelva descifrando el fichero... lo que puede implicar "idea feliz" :p ].
 
-Pues nada, vamos a probar cosas para descifrar el fichero (mezcla de random y fuerza bruta). El comando [será] (https://www.gnupg.org/gph/en/manual/x110.html):
+Pues nada, vamos a probar cosas para descifrar el fichero (mezcla de random y fuerza bruta). El comando [será](https://www.gnupg.org/gph/en/manual/x110.html):
 
 * _gpg --output login.txt --decrypt login.txt.gpg_
 
