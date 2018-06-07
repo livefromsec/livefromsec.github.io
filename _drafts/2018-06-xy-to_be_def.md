@@ -1,10 +1,11 @@
 ---
 layout: post
-title: "Mix navideño"
+title: "Bob Walkthrough"
 author: "Pete"
 ---
 
-Feliz año nuevo! Han sido unas semanas de desconexión, y la vuelta al día a día siempre cuesta!
+
+Después de la resoluciónd e Feliz año nuevo! Han sido unas semanas de desconexión, y la vuelta al día a día siempre cuesta!
 
 Pero vamos, desde luego esta Navidad nos ha traído noticias al mundo de la seguridad informática, como han sido las vulnerabilidades SPECTRE y MELTDOWN... que tienen imagen propia, y ya se sabe, cuando nos referimos a una vulnerabilidad con su nombre propio e imagen, en lugar de usando su CVE es que estamos hablando de palabras mayores :p
 
