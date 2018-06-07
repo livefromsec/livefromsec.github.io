@@ -37,11 +37,7 @@ Miro primero en passwords.html... era muy bonito para ser real, los admin nos cu
 
 ![placeholder]({{ site.url }}/assets/img/0016_20171124_owasp_top_ten.png)   -> la imagen del passwords.
 
-Miro en login.php, que da error, y en login.html que nos informa que está desactivada la página de login.
-
-![placeholder]({{ site.url }}/assets/img/0016_20171124_owasp_top_ten.png)   -> la imagen de la salida del nmap.
-
-Pues nada, en principio no habrá que forzar la inyección SQL en el formulario de login ;) Nos vamos a mirar la consola de desarrollo.
+Miro en login.php, que da error, y en login.html que nos informa que está desactivada la página de login. Pues nada, en principio no habrá que forzar la inyección SQL en el formulario de login ;) Nos vamos a mirar la consola de desarrollo.
 
 ![placeholder]({{ site.url }}/assets/img/0016_20171124_owasp_top_ten.png)   -> la imagen de la consola de dev.
 
@@ -53,17 +49,17 @@ Puede ejecutar comandos, así que vamos a ver si podemos abrirnos una shell con 
 
 Hummmm... parece que el admin se lo ha tomado en serio. Pruebo todos los trucos de la [entrada pasada](blabla), pero está todo filtrado.
 
-Vamos a ver si con wget podemos subir una shell en .php...
-
-![placeholder]({{ site.url }}/assets/img/0016_20171124_owasp_top_ten.png)   -> imagen diciendo que no.
+Vamos a ver si con wget podemos descargar y ejecutar una shell en .php...
 
 También está restringido. Pues nada, a ver si se pueden ejecutar dos comandos:
-* pruebo separándolos con ";", y también está bloqueado
-* pruebo concatenándolos, con "&&".
+* pruebo separándolos con ";", y también está bloqueado (aunque da otro mensaje).
+* pruebo concatenándolos, con "&&"... y funciona!
+
+![placeholder]({{ site.url }}/assets/img/0016_20171124_owasp_top_ten.png)   -> viendo el troleo
 
 Ahora sí, concatenamos id con un nc y tenemos nuestra shell 
 
-![placeholder]({{ site.url }}/assets/img/0016_20171124_owasp_top_ten.png)   -> imagen mostrando la shell.
+![placeholder]({{ site.url }}/assets/img/0016_20171124_owasp_top_ten.png)   -> imagen mostrando la shell 007
 
 Sacamos una shell con python:
 
@@ -82,6 +78,7 @@ Le echo un ojo al /etc/passwd con
 y veo que hay varios usuarios en el sistema: c0rruptedb1t, bob, jc, seb y elliot.
 Y que uno de ellos, bob aparece como "Not the smartest person".
 
+![placeholder]({{ site.url }}/assets/img/0016_20171124_owasp_top_ten.png)   -> imagen mostrando la shell.
 
 Nos vamos al /home y vamos a ir enumerando.
 * seb no tiene nada destacable en su home
@@ -96,5 +93,19 @@ Entonces, recopilando, tenemos 3 credenciales (las de elliot, jc y seb); un docu
 En la máquina de la entrada anterior esto no era un problema, porque el servicio corría como root, por lo que al conseguir explotarlo nuestra shell era root.
 
 Ahora tenemos que conseguir esa shell de root. 
+
+uname -a
+
+Está actualizado, así que nada. Miramos el linuxprivchecker, y nada a priori.
+
+Así que toca hacer recapitulación... ¿qué tenemos? Las claves de 3 de los 4 usuarios, dos scripts en python que no hacen nada y que no están en el crontab, un fichero cifrado y un fichero que imprime frases absurdas en pantalla.
+
+Pues nada, vamos a probar cosas para descifrar el fichero (mezcla de random y fuerza bruta). El comando [será] (https://www.gnupg.org/gph/en/manual/x110.html):
+
+* _gpg --output login.txt --decrypt login.txt.gpg_
+
+https://www.gnupg.org/gph/en/manual/x110.html
+
+Linux privchecker
 
 
