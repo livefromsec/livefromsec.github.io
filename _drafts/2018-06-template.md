@@ -13,7 +13,7 @@ Imagen de ambas vulns, tomada de europapress.
 
 Pero bueno, si eres asiduo al blog seguro que has leído muchos más detalles durante estos días (y sino, aquí tienes el enlace al megathread creado en Reddit para hablar del tema).
 
-Para la entrada de hoy me he traído dos ideas: la primera es un regalo de Reyes en forma de nuevo Humble Bundle :) Un pack de libros de Python! Yo lo he comprado por el libro de Django, pero seguro que cada uno tiene una motivación para comprarlo... al fin y al cabo, Python es EL lenguaje [enlace]
+Para la entrada de hoy me he traído dos ideas: la primera es un regalo de Reyes en forma de nuevo Humble Bundle :) Un pack de libros de Python! Yo lo he comprado por el libro de Django, pero seguro que cada uno tiene una motivación para comprarlo... al fin y al cabo, Python es EL lenguaje [enlace](https://www.google.com)
 
 Y lo mejor de todo, es que parte de la compra se destina a obras benéficas, así que es un win-win en toda regla.
 
