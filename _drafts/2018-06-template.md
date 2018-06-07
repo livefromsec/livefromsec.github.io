@@ -4,33 +4,81 @@ title: "Bob Walkthrough"
 author: "Pete"
 ---
 
+Después del post previo con la resolución de una máquina, aprovechando que tenía un poco de tiempo, me puse con otra máquina de Vulnhub. Con cada máquina se aprende algo nuevo! 
 
-Después de la resoluciónd e Feliz año nuevo! Han sido unas semanas de desconexión, y la vuelta al día a día siempre cuesta!
+La máquina en cuestión es Bob [Vulnhub](https://www.vulnhub.com/entry/bob-101,226/).
 
-Pero vamos, desde luego esta Navidad nos ha traído noticias al mundo de la seguridad informática, como han sido las vulnerabilidades SPECTRE y MELTDOWN... que tienen imagen propia, y ya se sabe, cuando nos referimos a una vulnerabilidad con su nombre propio e imagen, en lugar de usando su CVE es que estamos hablando de palabras mayores :p
+Seguimos los mismos pasos que en la [entrada anterior](https://livefromsec.github.io/2018-06-04/vulnhub_walkthrough_basic_pentesting).
 
-Imagen de ambas vulns, tomada de europapress.
+# Preparación
 
-Pero bueno, si eres asiduo al blog seguro que has leído muchos más detalles durante estos días (y sino, aquí tienes el enlace al megathread creado en Reddit para hablar del tema).
+Tenemos ya nuestra máquina Kali Linux, y tenemos que conocer la dirección de la máquina vulnerable. En el post anterior lo hacíamos comparando visualmente las salidas del comando arp-scan -l, pero en caso de que haya muchas máquinas en la red, tendremos que pasar un rato haciendo esa comparación, así que podemos hacerlo más fácil:
 
-Para la entrada de hoy me he traído dos ideas: la primera es un regalo de Reyes en forma de nuevo Humble Bundle :) Un pack de libros de Python! Yo lo he comprado por el libro de Django, pero seguro que cada uno tiene una motivación para comprarlo... al fin y al cabo, Python es EL lenguaje [enlace](https://www.google.com)
+* _arp-scan -l > lista_antes_
+* [Encendemos la máquina vulnerable]
+* _arp-scan -l > lista_despues_
+* _comm lista_antes lista_despues_
 
-Y lo mejor de todo, es que parte de la compra se destina a obras benéficas, así que es un win-win en toda regla.
+Así nos saldrá resaltada la máquina con su IP.
 
-El segundo tema es una idea que me rondaba la cabeza durante la Navidad. Vi una promoción por la que, comprando un juguete, te devolvían una cierta cantidad del precio.
+# Escaneo inicial
 
-La verdad es que al ver en qué consistía, me llamó bastante la atención: el reembolso son 20€, y a cambio hay que facilitar: nombre, apellidos, fecha de nacimiento, DNI (empieza a ponerse la cosa interesante, aunque entiendo que sea necesario controlar la participación y se consigue con el DNI), provincia, email, teléfono (se pone aún más interesante) y finalmente, la cuenta bancaria. DIN DIN DIN. 
+Una vez que conocemos la dirección IP, lanzamos nmap y vemos qué puertos/servicios tiene la máquina. Usamos los mismos flags que en post previo: -A, --reason y --top-ports.
 
-Aquí cada uno tendrá su opinión. Personalmente, considero que son muchos datos para 20€. Sobre todo, porque nos podíamos haber quedado en nombre, apellidos y correo electrónico, y hacer un ingreso por Paypal. Y total, los 20 euros van a ser los mismos.
+El resultado: la máquina tiene un servidor web, y el archivo robots.txt ya nos da alguna pista de por dónde empezar a mirar.
 
+![placeholder]({{ site.url }}/assets/img/0016_20171124_owasp_top_ten.png)   -> la imagen de la salida del nmap.
 
+Pues nada, vamos a echarle un ojo a los sitios incluidos en el robots.txt
 
-![placeholder]({{ site.url }}/assets/img/0016_20171124_owasp_top_ten.png)
+login.php, dev_shell.php, lat_memo.html y passwords.html
 
-Los XSS caen 4 puntos, hasta la séptima posición; y los CSRF salen del top ten. El pódium lo completan los problemas con la autenticación (que repite en el segundo puesto) y la exposición de datos sensibles, que sube desde el sexto puesto al tercero.
+Miro primero en passwords.html... era muy bonito para ser real, los admin nos cuentan que antes alguien se despistó y puso las passwords, pero que ya se ha quitado.
 
-![placeholder]({{ site.url }}/assets/img/0017_20171124_owasp_top_three.png)
+![placeholder]({{ site.url }}/assets/img/0016_20171124_owasp_top_ten.png)   -> la imagen del passwords.
 
-En resumen, muy buen documento que sintetiza en 20 páginas los principales riesgos a los que se enfrentan las aplicaciones web.
+Miro en login.php, que da error, y en login.html que nos informa que está desactivada la página de login.
 
-Y aprovechando que es 24 de noviembre, pequeño offtopic: como es el black friday, te recomiendo que le eches un ojo a la página de Shodan. Shodan es un scanner de IPv4 en el que se puede encontrar muchísima información, y ha repetido su habitual promoción de una suscripción permanente por un precio irrisorio. Si te dedicas a la seguridad informática, seguro que lo conoces ;)
+![placeholder]({{ site.url }}/assets/img/0016_20171124_owasp_top_ten.png)   -> la imagen de la salida del nmap.
+
+Pues nada, en principio no habrá que forzar la inyección SQL en el formulario de login ;) Nos vamos a mirar la consola de desarrollo.
+
+![placeholder]({{ site.url }}/assets/img/0016_20171124_owasp_top_ten.png)   -> la imagen de la consola de dev.
+
+# Consiguiendo la shell
+
+Puede ejecutar comandos, así que vamos a ver si podemos abrirnos una shell con netcat...
+
+![placeholder]({{ site.url }}/assets/img/0016_20171124_owasp_top_ten.png)   -> viendo el troleo
+
+Hummmm... parece que el admin se lo ha tomado en serio. Pruebo todos los trucos de la [entrada pasada](blabla), pero está todo filtrado.
+
+Vamos a ver si con wget podemos subir una shell en .php...
+
+![placeholder]({{ site.url }}/assets/img/0016_20171124_owasp_top_ten.png)   -> imagen diciendo que no.
+
+También está restringido. Pues nada, a ver si se pueden ejecutar dos comandos:
+* pruebo separándolos con ";", y también está bloqueado
+* pruebo concatenándolos, con "&&".
+
+Ahora sí, concatenamos id con un nc y tenemos nuestra shell 
+
+![placeholder]({{ site.url }}/assets/img/0016_20171124_owasp_top_ten.png)   -> imagen mostrando la shell.
+
+Sacamos una shell con python:
+
+![placeholder]({{ site.url }}/assets/img/0016_20171124_owasp_top_ten.png)   -> imagen mostrando la shell.
+
+y nos ponemos a enumerar.
+
+# Enumeración
+
+En la descripción que daban en Vulnhub, se recomienda buscar ficheros ocultos, así que a la hora de listar ficheros usaré:
+* _ls -la_
+
+Le echo un ojo al /etc/passwd con 
+* _cat /etc/passwd_
+
+y veo que hay varios usuarios en el sistema: c0rruptedb1t, bob, jc, seb y elliot.
+
+Nos vamos al /home y 
