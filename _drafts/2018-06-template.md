@@ -6,7 +6,7 @@ author: "Pete"
 
 Después del post previo con la resolución de una máquina, aprovechando que tenía un poco de tiempo, me puse con otra máquina de Vulnhub. Con cada máquina se aprende algo nuevo! 
 
-La máquina en cuestión es Bob [Vulnhub](https://www.vulnhub.com/entry/bob-101,226/).
+La máquina en cuestión es Bob ([Vulnhub](https://www.vulnhub.com/entry/bob-101,226/)).
 
 Seguimos los mismos pasos que en la [entrada anterior](https://livefromsec.github.io/2018-06-04/vulnhub_walkthrough_basic_pentesting).
 
