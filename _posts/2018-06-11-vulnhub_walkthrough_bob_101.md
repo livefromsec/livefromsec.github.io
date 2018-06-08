@@ -145,13 +145,15 @@ De momento, tampoco. Como no estamos en un examen, es el momento de pedir el com
 
 Al descargar la máquina, también se muestra un enlace a un walkthrough; así que vamos a echarle un ojo, a ver cómo de lejos hemos llegado. Al mirarlo, vemos que la contraseña es la primera letra de cada frase: HARPOCRATES.
 
+![placeholder]({{ site.url }}/assets/img/0043_201080607_0015.png)
+
 No comments ¬¬  podrían haber pasado horas y probablemente esa palabra no habría surgido en el brainstorm random de palabras, así que bien hecho está :)
 
 # Flag
 
-El siguiente paso es trivial, tenemos la clave de bob:
+El siguiente paso es trivial, tenemos la clave de bob (se ve en el _cat_ del fichero):
 
-![placeholder]({{ site.url }}/assets/img/0043_201080607_0015.png)
+![placeholder]({{ site.url }}/assets/img/0044_201080607_0016.png)
 
 Así que abrimos la sesión de bob, nos vamos a la raíz y hacemos:
 * _sudo cat flag.txt_
