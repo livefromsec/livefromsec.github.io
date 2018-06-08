@@ -89,7 +89,7 @@ Nos vamos al /home y vamos a ir enumerando.
 ![placeholder]({{ site.url }}/assets/img/0037_201080607_0009.png)
 
 * elliot tiene un fichero llamado theadminisdumb.txt xD Este fichero nos da las credenciales de james (presumiblemente jc) y las suyas.
-* bob es el que más cosas tiene: un fichero oculto llamado old_passwordfile.html, que tiene las credenciales de seb y las de jc. Además tiene 2 scripts en python (Hello_Again.py y Whell_Of_Fortune.py), un proftpd1.3.3 (versión backdorizada xD) y en su carpeta Documents tiene un documento poniendo a caldo a los demás (staff.txt), un fichero cifrado (login.txt.gpg) y un script que muestra unas notas en el escritorio.
+* bob es el que más cosas tiene: un fichero oculto llamado old_passwordfile.html, que tiene las credenciales de seb y las de jc. Además tiene 2 scripts en python (Hello_Again.py y Whell_Of_Fortune.py), un proftpd1.3.3 (versión backdorizada) y en su carpeta Documents tiene un documento poniendo a caldo a los demás (staff.txt), un fichero cifrado (login.txt.gpg) y un script que muestra unas notas en el escritorio.
 
 ![placeholder]({{ site.url }}/assets/img/0038_201080607_0010.png)
 
@@ -111,6 +111,7 @@ Miro a ver si netstat muestra algún puerto escuchando localmente:
 
 ¿Command not found? ¿Netstat? Investigando un poco, está obsoleto y su substituto es "ss". Algo nuevo que aprendemos con esta máquina :)
 * _ss_
+
 No muestra nada diferente.
 
 En este punto podemos usar un script que revisa los principales puntos para hacer la escalada de privilegios en sistemas linux. Hay varios, yo voy a usar linuxprivchecker que para mí se convirtió en herramienta imprescindible cuando estaba haciendo el OSCP.
@@ -142,9 +143,9 @@ Vamos allá, a probar ideas felices: bob, james, seb, elliot... no, de momento n
 
 De momento, tampoco. Como no estamos en un examen, es el momento de pedir el comodín de la llamada. Más que nada, porque seguir probando combinaciones sin garantía puede ser un "rabbit hole" y pasar así un par de horas sin resultados.
 
-Al descargar la máquina, también se muestra un enlace a un walkthrough; así que vamos a echarle un ojo, a ver cómo de lejos estamos. Al mirarlo, vemos que la contraseña es la primera letra de cada frase: HARPOCRATES.
+Al descargar la máquina, también se muestra un enlace a un walkthrough; así que vamos a echarle un ojo, a ver cómo de lejos hemos llegado. Al mirarlo, vemos que la contraseña es la primera letra de cada frase: HARPOCRATES.
 
-No comments ¬¬  podrían haber pasado horas y probablemente no me habría dado por probar esa palabra, así que bien hecho está :)
+No comments ¬¬  podrían haber pasado horas y probablemente esa palabra no habría surgido en el brainstorm random de palabras, así que bien hecho está :)
 
 # Flag
 
@@ -157,4 +158,4 @@ Así que abrimos la sesión de bob, nos vamos a la raíz y hacemos:
 
 ![placeholder]({{ site.url }}/assets/img/0044_201080607_0016)
 
-C'est fini :) Muy entretenido, aunque la parte de sacar la clave de cifrado gpg un poco de idea feliz...
+C'est fini :) Muy entretenido, aunque la parte de sacar la clave de cifrado gpg un poco de idea feliz :p
