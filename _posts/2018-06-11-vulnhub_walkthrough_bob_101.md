@@ -137,7 +137,7 @@ Pues nada, vamos a probar cosas para descifrar el fichero (mezcla de random y fu
 
 * _gpg --output login.txt --decrypt login.txt.gpg_
 
-![placeholder]({{ site.url }}/assets/img/0044_201080607_0014)
+![placeholder]({{ site.url }}/assets/img/0042_201080607_0014.png)
 
 Vamos allá, a probar ideas felices: bob, james, seb, elliot... no, de momento no hemos acertado. En el fichero "notes.sh" había referencias a Harry Potter, vamos a probar: "Harry", "HarryPotter", "Gryffindor", etc. 
 
@@ -151,11 +151,11 @@ No comments ¬¬  podrían haber pasado horas y probablemente esa palabra no hab
 
 El siguiente paso es trivial, tenemos la clave de bob:
 
-![placeholder]({{ site.url }}/assets/img/0043_201080607_0015)
+![placeholder]({{ site.url }}/assets/img/0043_201080607_0015.png)
 
 Así que abrimos la sesión de bob, nos vamos a la raíz y hacemos:
 * _sudo cat flag.txt_
 
-![placeholder]({{ site.url }}/assets/img/0045_201080607_0017)
+![placeholder]({{ site.url }}/assets/img/0045_201080607_0017.png)
 
 C'est fini :) Muy entretenido, aunque la parte de sacar la clave de cifrado gpg un poco de idea feliz :p
