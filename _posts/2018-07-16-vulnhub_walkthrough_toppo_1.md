@@ -46,7 +46,7 @@ Usando el comando id vemos que somos un usuario normal:
 
 Probamos qué podemos hacer con esta shell y parece que está limitada, por ejemplo _ifconfig_ no deja ejecutarlo. Y con _help_ muestra un listado bastante corto de comandos. Intentamos abrir una shell que esté menos limitada:
 
-* python -c 'import pty; pty.spawn("/bin/sh")'
+* _python -c 'import pty; pty.spawn("/bin/sh")'_
 
 Funciona, y no solo eso, también vemos que ahora mismo, el EUID del usuario es 0... Vamos a ver si podemos hacer maldades :)
 
