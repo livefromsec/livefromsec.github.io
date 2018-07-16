@@ -28,21 +28,21 @@ Como habitualmente las máquinas vulnerables que tienen los puertos 80/443 suele
 
 * _nikto -h 10.0.6.89_
 
-El servidor tiene una serie de carpetas interesantes: entre ellas "admin". Al ver qué hay en la carpeta, commprobamos que el servidor permite listar el directorio, por lo que vemos que tiene un fichero "notes.txt". Lo abrimos y vemos una password :)
-
-![placeholder]({{ site.url }}/assets/img/0048_20180716_0003.png)
+El servidor tiene una serie de carpetas interesantes: entre ellas "admin". Al ver qué hay en la carpeta, comprobamos que el servidor permite "directory listing", por lo que vemos que tiene un fichero "notes.txt". Lo abrimos y vemos una password :)
 
 # Consiguiendo la shell
 
-Nikto nos muestra que hay otra carpeta interesante, con la que igual se pueden ejecutar comandos pasándolos por post... pero esto tiene tan buena pinta, que es difícil resistirse a intentar hacer login en la máquina por SSH
+Nikto nos muestra que hay otra carpeta interesante, con la que igual se pueden ejecutar comandos pasándolos por GET o POST... pero esto tiene tan buena pinta, que es difícil resistirse a intentar hacer login en la máquina por SSH.
 
 Probamos el usuario root, y no funciona; y puesto que la clave tiene la cadena "ted", probamos a ver si el usuario ted existe... bingo!
 
-![placeholder]({{ site.url }}/assets/img/0049_20180716_0004.png)
+![placeholder]({{ site.url }}/assets/img/0048_20180716_0003.png)
 
 Usando el comando id vemos que somos un usuario normal:
 
 * _id_
+
+![placeholder]({{ site.url }}/assets/img/0049_20180716_0004.png)
 
 Probamos qué podemos hacer con esta shell y parece que está limitada, por ejemplo _ifconfig_ no deja ejecutarlo. Y con _help_ muestra un listado bastante corto de comandos. Intentamos abrir una shell que esté menos limitada:
 
