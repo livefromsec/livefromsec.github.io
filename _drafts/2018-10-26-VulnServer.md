@@ -25,11 +25,13 @@ Igual que hemos hecho en ejemplos anteriores:
 
 Empiezo lanzando Nmap y analizando los puertos abiertos. Por defecto, la aplicación escucha en el puerto 9999, así que el escaneo servirá para confirmar que está a la escucha:
 
-![placeholder]({{ site.url }}/assets/img/0047_20180716_0002.png)
+* _nmap -A -p 9999 <IP_Windows_VulnServer>_
 
-Efectivamente, el servidor está a la escucha en ese puerto.
+Aparecerá "open", así que efectivamente, el servidor está a la escucha en ese puerto.
 
 Siguiente paso, conecto a través de netcat, para ver qué opciones me ofrece:
+
+Imagen 001
 
 # Crasheo de la aplicación
 
