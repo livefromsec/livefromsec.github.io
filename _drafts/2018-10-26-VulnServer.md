@@ -8,9 +8,9 @@ En la entrada de hoy voy a describir cómo hacer la explotación básica de Vuln
 
 ¿Qué es un buffer overflow? Wikipedia al rescate [Buffer overflow](https://en.wikipedia.org/wiki/Buffer_overflow) :) Un buffer overflow se resume en que la aplicación no controla el tamaño de la entrada que le suministra el usuario, y llega un momento en el que desborda su espacio asignado. Al desbordarlo se sobreescriben registros y otras zonas sobre las que, a priori, no se debería poder escribir. 
 
-El repositorio en el que se encuentra la aplicación es [VulnServer, en GitHub](https://github.com/stephenbradshaw/vulnserver) y la página web de su creador es [The Grey Corner](http://www.thegreycorner.com/). Una vez hechas las presentaciones, vamos a ver cómo podemos explotar la aplicación ;)
+El repositorio en el que se encuentra la aplicación es [GitHub](https://github.com/stephenbradshaw/vulnserver) y la página web de su creador es [The Grey Corner](http://www.thegreycorner.com/). 
 
-En este caso la metodología es diferente, ya que necesitamos una máquina de pruebas y un debugger con el que ir paso a paso.
+Una vez hechas las presentaciones, vamos a ver cómo podemos explotar la aplicación! En este caso la metodología es diferente, ya que necesitamos una máquina de pruebas y un debugger con el que ir paso a paso.
 
 # Preparación
 
