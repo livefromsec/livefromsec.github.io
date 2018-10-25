@@ -13,21 +13,28 @@ Repetimos la metodología de las máquinas anteriores:
 
 # Preparación
 
-En este caso no hace falta que usemos _arp-scan_, ya que cuando la máquina arranca nos muestra la dirección que ha cogido por DHCP.
+Puesto que la máquina no nos dice directamente la IP que ha cogido por DHCP, tenemos que usar arp-scan:
+* _arp-scan -l_
+* Arrancamos la máquina:
+* _arp-scan -l_
 
-![placeholder]({{ site.url }}/assets/img/0046_20180716_0001.png)
+Y obtenemos la dirección IP de Lampiao. Como en cada caso variará, a partir de ahora a esa dirección la llamaré <IP_Lampiao>. 
 
 # Escaneo inicial
 
-Igual que hasta ahora, comenzamos lanzando nmap y viendo qué puertos tiene abiertos la máquina:
+Lanzo nmap y veo qué puertos tiene abiertos la máquina:
+* _nmap -p- -A <IP_Lampiao>_
 
-El resultado: la máquina tiene un servidor web, un servidor ftp, y algún puerto más abierto.:
+El resultado: la máquina tiene el puerto del SSH, y luego un servidor web corriendo en el puerto 1898, y el puerto 80 abierto.
 
-![placeholder]({{ site.url }}/assets/img/0047_20180716_0002.png)
+Lanzo nikto a ambos puertos:
 
-Como habitualmente las máquinas vulnerables que tienen los puertos 80/443 suelen tener ahí los puntos de entrada, lanzamos nikto al puerto 80:
+* _nikto -h <IP_Lampiao>_
+* _nikto -h <IP_Lampiao> -p 1898_
 
-* _nikto -h 10.0.6.89_
+Nikto indica que el puerto 80 no tiene un servidor web. Así que accedo a través de Firefox para ver qué muestra, y únicamente aparece una imagen hecha en caracteres ASCII:
+
+Imagen
 
 El servidor tiene una serie de carpetas interesantes: entre ellas "admin". Al ver qué hay en la carpeta, comprobamos que el servidor permite "directory listing", por lo que vemos que tiene un fichero "notes.txt". Lo abrimos y vemos una password :)
 
