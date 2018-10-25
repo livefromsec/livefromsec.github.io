@@ -4,11 +4,12 @@ title: "Lampiao: 1 Walkthrough"
 author: "Pete"
 ---
 
-Bienvenido de nuevo. Aprovechando que tenía un rato libre he aprovechado para jugar un poco con la última máquina que han subido a Vulnhub ([Toppo: 1](https://www.vulnhub.com/entry/toppo-1,245/)).
+Bienvenido de nuevo. Aprovechando que tenía un rato libre he aprovechado para jugar un poco con la última máquina que han subido a Vulnhub ([Lampiao: 1](https://www.vulnhub.com/entry/lampiao-1,249/)).
 
 Repetimos la metodología de las máquinas anteriores:
 * [Basic pentesting](https://livefromsec.github.io/2018-06-04/vulnhub_walkthrough_basic_pentesting)
 * [Bob: 101](https://livefromsec.github.io/2018-06-11/vulnhub_walkthrough_bob_101)
+* [Toppo 1](https://www.vulnhub.com/entry/toppo-1,245/)
 
 # Preparación
 
