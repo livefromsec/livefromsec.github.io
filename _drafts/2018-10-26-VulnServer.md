@@ -14,7 +14,7 @@ Una vez hechas las presentaciones, vamos a ver cómo podemos explotar la aplicac
 
 # Preparación
 
-Hace falta tener una máquina (Windows) y la aplicación vulnerable (que se puede descargar del GitHub que hemos visto antes). Además, hace falta un debugger (voy a usar [Inmunity](https://www.immunityinc.com/products/debugger/), y también un módulo para el debugger [Mona, en Github](https://github.com/corelan/mona).
+Hace falta tener una máquina (Windows) y la aplicación vulnerable (que se puede descargar del GitHub que hemos visto antes). Además, hace falta un debugger (voy a usar [Inmunity](https://www.immunityinc.com/products/debugger/)), y también un módulo para el debugger [Mona](https://github.com/corelan/mona).
 
 # Escaneo inicial
 
