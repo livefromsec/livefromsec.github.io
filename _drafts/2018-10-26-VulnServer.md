@@ -47,7 +47,16 @@ Como vemos, al enviar una cadena de XXX "A" se ha producido el error, sobrescrib
 
 # Control de EIP
 
-El siguiente paso es serasdfdsaf
+Mirando en Inmunity, se ve que ESP se ha llenado con "A", que empiezan a partir de la dirección: MIRAR. Y que EIP también tiene "A".
+
+EIP es un registro que indica la siguiente instrucción a ejecutar por lo que si apuntase a ESP, y en ESP pongo algo que quiero que se ejecute, efectivamente conseguiré su ejecución: el procesador accederá a EIP, de ahí irá a ESP y empezará a ejecutar.
+
+Empezamos por controlar el contenido de EIP. Ahora mismo tiene "41" que es la representación en hexadecimal de "A", pero si en lugar de XXX "A" envío una cadena que no se repita, podré identificar el punto en el que se escribe en EIP.
+
+Para generar esta cadena, voy a usar el módulo Mona:
+
+
+Si ahora ponemos 
 Igual que hasta ahora, comenzamos lanzando nmap y viendo qué puertos tiene abiertos la máquina:
 
 El resultado: la máquina tiene un servidor web, un servidor ftp, y algún puerto más abierto.:
