@@ -17,8 +17,24 @@ Hace falta tener una máquina (Windows) y la aplicación vulnerable (que se pued
 # Escaneo inicial
 
 Igual que hemos hecho en ejemplos anteriores:
+* [Basic pentesting](https://livefromsec.github.io/2018-06-04/vulnhub_walkthrough_basic_pentesting)
+* [Bob: 101](https://livefromsec.github.io/2018-06-11/vulnhub_walkthrough_bob_101)
+* [Toppo](https://livefromsec.github.io/2018-07-16/vulnhub_walkthrough_toppo_1)
+
+Empiezo lanzando Nmap y analizando los puertos abiertos. Por defecto, la aplicación escucha en el puerto 9999, así que el escaneo servirá para confirmar que está a la escucha:
+
+![placeholder]({{ site.url }}/assets/img/0047_20180716_0002.png)
+
+Efectivamente, el servidor está a la escucha en ese puerto.
+
+Siguiente paso, conecto a través de netcat, para ver qué opciones me ofrece:
 
 
+
+
+
+
+Efectivamente, el serv
 --- 
 
 Igual que hasta ahora, comenzamos lanzando nmap y viendo qué puertos tiene abiertos la máquina:
