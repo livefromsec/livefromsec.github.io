@@ -35,7 +35,7 @@ Siguiente paso, conecto a través de netcat, para ver qué opciones me ofrece:
 
 En esta entrada, la explotación va a ser la del buffer overflow en el comando TRUN.
 
-El primer paso es conseguir "crashear" la aplicación, para ello generamos un script (en mi caso, con Python ;) [¿Por qué Python?](https://livefromsec.github.io/2017-10-27/por-que-python).
+El primer paso es conseguir "crashear" la aplicación, para ello generamos un script (si has leído más entradas, puedes imaginar que con Python [¿Por qué Python?](https://livefromsec.github.io/2017-10-27/por-que-python).
 
 <<Imagen del script>>
   
