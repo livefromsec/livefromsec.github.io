@@ -6,9 +6,7 @@ author: "Pete"
 
 En la entrada de hoy voy a describir cómo hacer la explotación básica de VulnServer. VulnServer es una aplicación diseñada para practicar la explotación de buffer overflows. 
 
-¿Qué es un buffer overflow? Como siempre, wikipedia al rescate [Buffer overflow](https://en.wikipedia.org/wiki/Buffer_overflow).
-
-Un buffer overflow se resume en que la aplicación no controla el tamaño de la entrada que le suministra el usuario, y llega un momento en el que desborda su espacio asignado. Al desbordarlo se sobreescriben registros y otras zonas sobre las que, a priori, no se debería poder escribir. 
+¿Qué es un buffer overflow? Wikipedia al rescate [Buffer overflow](https://en.wikipedia.org/wiki/Buffer_overflow) :) Un buffer overflow se resume en que la aplicación no controla el tamaño de la entrada que le suministra el usuario, y llega un momento en el que desborda su espacio asignado. Al desbordarlo se sobreescriben registros y otras zonas sobre las que, a priori, no se debería poder escribir. 
 
 El repositorio en el que se encuentra la aplicación es [VulnServer, en GitHub](https://github.com/stephenbradshaw/vulnserver) y la página web de su creador es [The Grey Corner](http://www.thegreycorner.com/). Una vez hechas las presentaciones, vamos a ver cómo podemos explotar la aplicación ;)
 
