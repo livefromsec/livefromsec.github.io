@@ -54,9 +54,41 @@ EIP es un registro que indica la siguiente instrucción a ejecutar por lo que si
 Empezamos por controlar el contenido de EIP. Ahora mismo tiene "41" que es la representación en hexadecimal de "A", pero si en lugar de XXX "A" envío una cadena que no se repita, podré identificar el punto en el que se escribe en EIP.
 
 Para generar esta cadena, voy a usar el módulo Mona:
+* _!mona pattern_create 2150_
 
+Se abre el log de Inmunity e indica que el fichero se ha creado correctamente, con el nombre pattern.txt. Abro el fichero, y sustituyo la cadena de "A" por la nueva cadena.
 
-Si ahora ponemos 
+Ejecuto de nuevo la prueba de concepto y esta vez, en lugar de 41414141, EIP contendrá otra cadena (33445566, es este caso.)
+
+De nuevo uso Mona, para calcular el offset que hay:
+* _!mona pattern_offset 386F4337_
+
+Ahora que ya conozco el offset, puedo definir la variable buffer en la prueba de concepto de la siguiente manera:
+
+* EIP = “\x42\x42\x42\x42” #BBBB
+* buffer = "TRUN /.:/" + "A" * 2003 + EIP + "C" * (XXX - 2003 - 4)
+
+Al ejecutar, si todo ha ido bien, en EIP aparecerán 4 "B"; y ESP estará lleno de "C".
+
+# Salto a ESP
+
+Una vez que puedo poner el valor que quiera en EIP, el siguiente paso es redigirir la ejecución a ESP. Para ello, lo más sencillo es buscar una instrucción que haga ese salto, como un "JMP ESP".
+
+De nuevo recurrimos a Mona:
+* _!mona jmp -r esp_
+
+En el listado que tenemos, buscamos un salto que no tenga las medidas de protección activas (sin ASLR, sin SafeSEH, etc.). Por ejemplo, en este caso, cojo el primero.
+
+Como las arquitecturas habituales son little endian los bytes más pequeños se almacenan primero, así que hay que invertir el orden de los bytes al indicar la dirección:
+* _AAAA_
+
+Confirmo que es un "JMP ESP" (hexadecimal FFE4), y vuelvo a confirmar, añadiendo un punto de parada. ¿Por qué? Porque de lo contrario la ejecución funcionará, se realizará el salto a ESP correctamente, y el error se producirá más adelante, por lo que no veré en EIP la dirección que me interesa.
+
+Ejecuto de nuevo el exploit, y compruebo que la ejecución se para al llegar a esa instrucción, con la dirección XXX en EIP.
+
+# Comprobación de los badcharsCreación de la shellcode
+
+Una vez 
 Igual que hasta ahora, comenzamos lanzando nmap y viendo qué puertos tiene abiertos la máquina:
 
 El resultado: la máquina tiene un servidor web, un servidor ftp, y algún puerto más abierto.:
