@@ -4,19 +4,19 @@ title: "VulnServer - Basic Exploitation"
 author: "Pete"
 ---
 
-En la entrada de hoy voy a describir cómo hacer la explotación básica de VulnServer. VulnServer es una aplicación diseñada para practicar la explotación de buffer overflows.
+En la entrada de hoy voy a describir cómo hacer la explotación básica de VulnServer. VulnServer es una aplicación diseñada para practicar la explotación de buffer overflows. 
 
-El repositorio en el que se encuentra es [VulnServer, en GitHub](https://github.com/stephenbradshaw/vulnserver) y la página web de su creador es [The Grey Corner](http://www.thegreycorner.com/). Una vez hechas las presentaciones, vamos a ver cómo podemos explotar la aplicación ;)
+¿Qué es un buffer overflow? Como siempre, wikipedia al rescate [Buffer overflow](https://en.wikipedia.org/wiki/Buffer_overflow).
+
+Un buffer overflow se resume en que la aplicación no controla el tamaño de la entrada que le suministra el usuario, y llega un momento en el que desborda su espacio asignado. Al desbordarlo se sobreescriben registros y otras zonas sobre las que, a priori, no se debería poder escribir. 
+
+El repositorio en el que se encuentra la aplicación es [VulnServer, en GitHub](https://github.com/stephenbradshaw/vulnserver) y la página web de su creador es [The Grey Corner](http://www.thegreycorner.com/). Una vez hechas las presentaciones, vamos a ver cómo podemos explotar la aplicación ;)
 
 En este caso la metodología es diferente, ya que necesitamos una máquina de pruebas y un debugger con el que ir paso a paso.
 
-# Introducción
-
-¿Qué es lo que vamos a hacer? Explotar una vulnerabilidad de [buffer overflow](https://en.wikipedia.org/wiki/Buffer_overflow).
-
 # Preparación
 
-Hace falta tener una máquina (Windows) y la aplicación vulnerable (que se puede descargar del Github que hemos visto antes). Además, hace falta un debugger (voy a usar [Inmunity](https://www.immunityinc.com/products/debugger/), y también un módulo para el debugger [Mona, en Github](https://github.com/corelan/mona).
+Hace falta tener una máquina (Windows) y la aplicación vulnerable (que se puede descargar del GitHub que hemos visto antes). Además, hace falta un debugger (voy a usar [Inmunity](https://www.immunityinc.com/products/debugger/), y también un módulo para el debugger [Mona, en Github](https://github.com/corelan/mona).
 
 # Escaneo inicial
 
@@ -35,15 +35,17 @@ Siguiente paso, conecto a través de netcat, para ver qué opciones me ofrece:
 
 # Crasheo de la aplicación
 
-En esta entrada voy a explotar el buffer overflow que hay al usar TRUN. 
-
-Un buffer overflow se resume en que la aplicación no controla el tamaño de la entrada que le suministra el usuario, y llega un momento en el que desborda su espacio asignado, para sobrescribir registros y otras zonas sobre las que, a priori, no debería tener control. 
+En esta entrada, la explotación va a ser la del buffer overflow en el comando TRUN.
 
 El primer paso es conseguir "crashear" la aplicación, para ello generamos un script (en mi caso, con Python ;) [¿Por qué Python?](https://livefromsec.github.io/2017-10-27/por-que-python).
 
-<<Imagen del script:>>
+<<Imagen del script>>
   
 Vamos incrementando la longitud de la cadena de "A" que mandamos, hasta que desborda el búffer, sobreescribe registros que no debería... y la aplicación no sabe cómo continuar.
+
+<<Imagen del crash>>
+  
+Como vemos, 
 
 --- 
 
