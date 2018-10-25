@@ -8,7 +8,11 @@ En la entrada de hoy voy a describir cómo hacer la explotación básica de Vuln
 
 El repositorio en el que se encuentra es [VulnServer, en GitHub](https://github.com/stephenbradshaw/vulnserver) y la página web de su creador es [The Grey Corner](http://www.thegreycorner.com/). Una vez hechas las presentaciones, vamos a ver cómo podemos explotar la aplicación ;)
 
-En este caso la metodología es diferente, ya que necesitamos una máquina de pruebas y un debugger con el que ir paso a paso. 
+En este caso la metodología es diferente, ya que necesitamos una máquina de pruebas y un debugger con el que ir paso a paso.
+
+# Introducción
+
+¿Qué es lo que vamos a hacer? Explotar una vulnerabilidad de [buffer overflow](https://en.wikipedia.org/wiki/Buffer_overflow).
 
 # Preparación
 
@@ -29,12 +33,18 @@ Efectivamente, el servidor está a la escucha en ese puerto.
 
 Siguiente paso, conecto a través de netcat, para ver qué opciones me ofrece:
 
+# Crasheo de la aplicación
 
+En esta entrada voy a explotar el buffer overflow que hay al usar TRUN. 
 
+Un buffer overflow se resume en que la aplicación no controla el tamaño de la entrada que le suministra el usuario, y llega un momento en el que desborda su espacio asignado, para sobrescribir registros y otras zonas sobre las que, a priori, no debería tener control. 
 
+El primer paso es conseguir "crashear" la aplicación, para ello generamos un script (en mi caso, con Python ;) [¿Por qué Python?](https://livefromsec.github.io/2017-10-27/por-que-python).
 
+<<Imagen del script:>>
+  
+Vamos incrementando la longitud de la cadena de "A" que mandamos, hasta que desborda el búffer, sobreescribe registros que no debería... y la aplicación no sabe cómo continuar.
 
-Efectivamente, el serv
 --- 
 
 Igual que hasta ahora, comenzamos lanzando nmap y viendo qué puertos tiene abiertos la máquina:
